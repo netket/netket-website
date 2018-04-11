@@ -29,6 +29,9 @@ exclude:
   - .idea/
   - .gitignore
   - README.md
+
+exclude: [vendor] # make sure to exclude 'vendor' from the build 
+
 timezone: Europe/Berlin
 
 defaults:
