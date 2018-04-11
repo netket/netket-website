@@ -1,0 +1,58 @@
+# Site settings
+title: NetKet
+email: your-email@domain.com
+description: >
+  NetKet, open-source library for the development of machine intelligence for many-body quantum systems.
+
+baseurl: "/NetKet" # the subpath of your site, e.g. /blog/
+url: https://aksakalli.github.io/jekyll-doc-theme # the base hostname & protocol for your site
+git_address: https://github.com/aksakalli/jekyll-doc-theme
+git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
+
+# theme options from https://bootswatch.com/
+# comment out this to use default Bootstrap
+bootwatch: cosmo
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+gems:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - csl/styles
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+  - README.md
+timezone: Europe/Berlin
+
+defaults:
+- scope:
+    path: _challenges
+    type: challenges
+  values:
+    layout: challenges
+    sectionid: challenges
+
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+
+  challenges:
+    permalink: /:collection/:path/
+    output: true

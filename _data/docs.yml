@@ -1,0 +1,24 @@
+- title: Getting Started
+  docs:
+  - requirements
+  - compiling
+  - explore_examples
+  - write_new
+
+- title: Graphs
+  docs:
+  - hardcoded_graphs
+  - custom_graphs
+
+- title: Hamiltonians
+  docs:
+  - hardcoded_hamiltonians
+  - custom_hamiltonians
+
+- title: Machines
+  docs:
+  - rbm
+
+- title: Examples
+  docs:
+  - ising
