@@ -4,7 +4,7 @@ email: your-email@domain.com
 description: >
   NetKet, open-source library for the development of machine intelligence for many-body quantum systems.
 
-baseurl: "/netket-website/" # the subpath of your site, e.g. /blog/
+baseurl: "/netket-website" # the subpath of your site, e.g. /blog/
 url: https://netket.gitlab.io/ # the base hostname & protocol for your site
 git_address: https://netket.gitlab.io/
 
