@@ -12,8 +12,6 @@ group :jekyll_plugins do
    gem "jekyll-sitemap"
    gem "jekyll-redirect-from"
    gem "jekyll-seo-tag"
-   gem "jekyll-scholar"
-   gem "citeproc-ruby"
    gem "csl-styles"
 end
 
