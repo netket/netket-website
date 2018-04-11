@@ -1,6 +1,6 @@
 # Site settings
 title: NetKet
-email: your-email@domain.com
+email: netket@netket.org
 description: >
   NetKet, open-source library for the development of machine intelligence for many-body quantum systems.
 
@@ -32,7 +32,7 @@ exclude:
 
 exclude: [vendor] # make sure to exclude 'vendor' from the build
 
-timezone: Europe/Berlin
+timezone: America/New_York
 
 defaults:
 - scope:
