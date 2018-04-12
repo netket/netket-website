@@ -3,13 +3,6 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    bibtex-ruby (4.4.6)
-      latex-decode (~> 0.0)
-    citeproc (1.0.9)
-      namae (~> 1.0)
-    citeproc-ruby (1.1.10)
-      citeproc (~> 1.0, >= 1.0.9)
-      csl (~> 1.5)
     colorator (1.1.0)
     csl (1.5.0)
       namae (~> 1.0)
@@ -34,11 +27,6 @@ GEM
       jekyll (~> 3.3)
     jekyll-sass-converter (1.5.2)
       sass (~> 3.4)
-    jekyll-scholar (5.13.0)
-      bibtex-ruby (~> 4.0, >= 4.0.13)
-      citeproc-ruby (~> 1.0)
-      csl-styles (~> 1.0)
-      jekyll (~> 3.0)
     jekyll-seo-tag (2.4.0)
       jekyll (~> 3.3)
     jekyll-sitemap (1.2.0)
@@ -46,7 +34,6 @@ GEM
     jekyll-watch (1.5.1)
       listen (~> 3.0)
     kramdown (1.16.2)
-    latex-decode (0.3.1)
     liquid (3.0.6)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -73,18 +60,16 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  citeproc-ruby
   csl-styles
   jekyll (= 3.4.3)
   jekyll-feed
   jekyll-redirect-from
-  jekyll-scholar
   jekyll-seo-tag
   jekyll-sitemap
   tzinfo-data
 
 RUBY VERSION
-   ruby 2.5.1p57
+   ruby 2.5.0p0
 
 BUNDLED WITH
    1.16.1

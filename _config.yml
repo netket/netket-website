@@ -11,7 +11,7 @@ git_address: https://netket.gitlab.io/
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
-bootwatch: cosmo
+bootwatch: flatly
 
 # Build settings
 markdown: kramdown
