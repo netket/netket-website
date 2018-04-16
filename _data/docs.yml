@@ -19,6 +19,10 @@
   docs:
   - rbm
 
+- title: Sampling
+  docs:
+  - metropolis_local
+
 - title: Examples
   docs:
   - ising
