@@ -42,6 +42,7 @@ defaults:
     layout: challenges
     sectionid: challenges
 
+
 - scope:
     path: _docs
     type: docs

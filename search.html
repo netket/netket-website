@@ -1,0 +1,46 @@
+---
+layout: search
+title: Search
+permalink: /search/
+---
+
+<script>
+  var list_site = [
+    {% for doc in site.docs %}
+      {
+        'title': '{{ doc.title | xml_escape }}',
+        'content': {{ doc.content  | strip_html |jsonify }},
+        'url': '{{ doc.url | prepend: site.baseurl | xml_escape }}'
+      }
+      ,
+    {% endfor %}
+    {% for doc in site.challenges %}
+      {
+        'title': '{{ doc.title | xml_escape }}',
+        'content': {{ doc.content  | strip_html |jsonify }},
+        'url': '{{ doc.url | prepend: site.baseurl | xml_escape }}'
+      }
+      {% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    ]
+
+
+</script>
+<script src="/netket-website/js/fuse.min.js"></script>
+<script src="/netket-website/js/search.js"></script>
+
+
+<div class="form-group">
+  <div class="row">
+    <div class="col-lg-4 col-lg-offset-4">
+      <input type="text" class="form-control" name="query" id="search-box" placeholder="Search here..." oninput="RunSearch(document.getElementById('search-box').value)">
+    </div>
+  </div>
+</div>
+
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3" id="search-results">
+
+  </div>
+</div>
