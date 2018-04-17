@@ -3,15 +3,7 @@ title: Local Moves
 permalink: /docs/metropolis_local/
 ---
 
-A central task in several learning applications is the ability to sample from a given machine.
-For example, in the variational learning one samples quantum numbers $$ s_1\dots s_N $$
-from the probability distribution given by the square modulus of the wave-function:
-
-$$
-P(s_1\dots s_N) = |\Psi(s_1\dots s_N) | ^2.
-$$
-
-NetKet implements several local [Metropolis-Hastings](https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm) moves.
+Local samplers propose to modify only a limited set of quantum numbers at the time.
 The samplers describe below can be used for any quantum system with a local (and finite) discrete Hilbert space.
 
 <h2 class="bg-primary">MetropolisLocal</h2>
@@ -42,19 +34,8 @@ pars['Sampler']={
 ```
 
 <h2 class="bg-primary">MetropolisLocalPt</h2>
-This sampler performs [parallel-tempering](https://en.wikipedia.org/wiki/Parallel_tempering) moves, effectively sampling from the a set of probability distributions
-
-$$
-P_\beta(s_1\dots s_N) \equiv P^\beta(s_1\dots s_N),
-$$
-
-each associated to an inverse *temperature* $$ 1 \leq \beta_k \leq 0 $$. During the sampling, configurations at different
-*temperatures* are exchanged, to increase ergodicity. Only quantum numbers sampled from $$ \beta =1 $$ (corresponding to the original probability distribution) are retained
-to compute the required expectation values.
-
-In this version of the algorithm, inverse temperatures are chosen according to the simple form $$ \beta_k = 1 - k/N_{\mathrm{rep}} $$,
-where $$ N_{\mathrm{rep}} $$ is a user-supplied number specifying how many temperatures are to be taken.
-Upon increasing the number of temperatures (or replicas, in the jargon) one can improve the sampling efficiency.
+This sampler performs [parallel-tempering](https://en.wikipedia.org/wiki/Parallel_tempering) moves in addition to
+the local moves implemented in `MetropolisLocal`. The number of replicas can be $$ N_{\mathrm{rep}} $$ chosen by the user. 
 
 |---
 | Parameter | Possible values | Description | Default value |

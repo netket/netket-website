@@ -42,6 +42,12 @@ defaults:
     layout: challenges
     sectionid: challenges
 
+- scope:
+    path: _about
+    type: about
+  values:
+    layout: about
+    sectionid: about
 
 - scope:
     path: _docs
@@ -58,5 +64,9 @@ collections:
     output: true
 
   challenges:
+    permalink: /:collection/:path/
+    output: true
+
+  about:
     permalink: /:collection/:path/
     output: true

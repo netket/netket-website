@@ -21,7 +21,9 @@
 
 - title: Sampling
   docs:
+  - sampling_introduction
   - metropolis_local
+  - metropolis_hamiltonian
 
 - title: Examples
   docs:
