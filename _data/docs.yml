@@ -15,6 +15,12 @@
   - hardcoded_hamiltonians
   - custom_hamiltonians
 
+- title: Learning
+  docs:
+  - learning_introduction
+  - steppers
+  - stochastic_reconfiguration
+
 - title: Machines
   docs:
   - rbm

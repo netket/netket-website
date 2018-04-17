@@ -3,6 +3,8 @@ title: Hamiltonian Moves
 permalink: /docs/metropolis_hamiltonian/
 ---
 
+<h2 class="bg-primary">MetropolisHamiltonian</h2>
+
 NetKet implements sampling based on the off-diagonal elements of the [Hamiltonian](../hamiltonian/).
 In this case, the transition matrix is taken to be:
 
