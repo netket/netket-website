@@ -3,7 +3,7 @@ title: Restricted Boltzmann Machine
 permalink: /docs/rbm/
 ---
 
-Restricted Boltzmann machines are implemented in different flavors in NetKet.
+[Restricted Boltzmann machines](https://en.wikipedia.org/wiki/Restricted_Boltzmann_machine) are implemented in different flavors in NetKet.
 
 <h2 class="bg-primary">RbmSpin</h2>
 This type of RBM has spin $$ 1/2 $$ hidden units, and is defined by:
@@ -103,4 +103,5 @@ pars['Machine']={
 
 ## References
 ---------------
-1. [Carleo, G., & Troyer, M. (2017). Solving the quantum many-body problem with artificial neural networks. Science, 355 602](http://science.sciencemag.org/content/355/6325/602)
+1. [Hinton, G, & Salakhutdinov, R. (2006). Reducing the Dimensionality of Data with Neural Networks. Science, 313 504](http://science.sciencemag.org/content/313/5786/504)
+2. [Carleo, G., & Troyer, M. (2017). Solving the quantum many-body problem with artificial neural networks. Science, 355 602](http://science.sciencemag.org/content/355/6325/602)

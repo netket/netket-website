@@ -1,5 +1,5 @@
 ---
-title: Introduction
+title: Introduction 
 permalink: /docs/sampling_introduction/
 ---
 

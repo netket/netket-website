@@ -31,8 +31,10 @@ pars['Graph']={
 ```
 
 The name of the parameters should be self-explanatory, for example here we are taking a `Hypercube` in one `Dimension` with periodic boundaries (`Pbc`) and with a linear extent of `L` 20 sites.
-If you wanted to study instead a $$ L \times L $$ square lattice, you'd just set  `Dimension : 2`.
-In this first release of NetKet only Hypercube geometries can be specified, however full support for arbitrary graphs will be added in the next releases (see also open Tasks).
+If you wanted to study instead a $$ L \times L $$ square lattice, you would just set  `Dimension : 2`.
+
+Apart from [Built-in Graphs]({{ site.baseurl }}{% link _docs/graphs/hardcoded_graphs.md %}) (such as the Hypercube),
+you can easily specify virtually any other custom graph, as explained [here]({{ site.baseurl }}{% link _docs/graphs/custom_graphs.md %}).
 
 
 ### Defining the Hamiltonian
@@ -46,8 +48,12 @@ pars['Hamiltonian']={
 ```
 
 Here we specify again the name of the Hamiltonian and also the fact the we want to study the model at the critical point, i.e. for transverse field $$ h=1 $$.
-If you would like to find out what other parameters you can pass to this Hamiltonian, you can have a look at `Hamiltonian/ising.hh`.
-You will see that the JSON constructor in this case also takes the parameter `J` (the longitudinal interaction) which if not specified has a default value of 1.0.
+If you would like to find out what other parameters you can pass to this Hamiltonian,
+you can have a look at the section on [Built-in Hamiltonians]({{ site.baseurl }}{% link _docs/hamiltonians/hardcoded_hamiltonians.md %}).
+
+NetKet also allows to define custom Hamiltonians, simply working at the level of input files, as explained [here]({{ site.baseurl }}{% link _docs/hamiltonians/custom_hamiltonians.md %}).
+
+<!-- You will see that the JSON constructor in this case also takes the parameter `J` (the longitudinal interaction) which if not specified has a default value of 1.0.
 
 ```c++
 Ising(const G & graph,const json & pars):
@@ -58,12 +64,12 @@ Ising(const G & graph,const json & pars):
 
   Init();
 }
-```
+``` -->
 
 ### Defining the Machine
-In this section of the input we specify what wave function ansatz we wish to use. Here, we take a Restricted Boltzmann Machine `RbmSpin` with spin $ 1/2 $ hidden units.
-To further use this machine we must also specify the number of hidden units we want to have. This can be done either setting `Nhidden`, or alternatively setting `Alpha`, where
-$ \alpha = N_{\mathrm{hidden}}/N_{\mathrm{visible}} $, as done in the example input.
+In this section of the input we specify what wave function ansatz we wish to use. Here, we take a Restricted Boltzmann Machine `RbmSpin` with spin $$ 1/2 $$ hidden units.
+To further use this machine we must also specify the number of hidden units we want to have. This can be done either setting `Nhidden`,
+or alternatively setting the hidden unit density `Alpha`, where $$ \alpha = N_{\mathrm{hidden}}/N_{\mathrm{visible}} $$, as done in the example input.
 
 ```python
 pars['Machine']={
@@ -72,16 +78,18 @@ pars['Machine']={
 }
 ```
 
+Further details about the Restricted Boltzmann Machines and the other machines implemented in NetKet can be found [here]({{ site.baseurl }}{% link _docs/machines/rbm.md %}).
 
 ### Defining the Sampling scheme
-Another crucial ingredient for the learning part is the Markov-Chain Monte Carlo scheme used for sampling. Here, we consider a local Metropolis sampler (see XXX for a description of the available samplers).
+Another crucial ingredient for the learning part is the Markov-Chain Monte Carlo scheme used for sampling. Here, we consider a local Metropolis sampler
+(see [here]({{ site.baseurl }}{% link _docs/sampling/introduction.md %}) for a description of the available samplers).
 
 ```python
 pars['Sampler']={
     'Name'           : 'MetropolisLocal',
 }
 ```
-In general, choosing a good sampling scheme is crucial to guarantee that the quantum expectation values over the variational states are computed with a small autocorrelation time (see XXX for a description of the statistical analysis performed by NetKet).
+In general, choosing a good sampling scheme is crucial to guarantee that the quantum expectation values over the variational states are computed with a small autocorrelation time.
 
 ### Defining the Learning scheme
 Finally, we must specify what learning algorithm we wish to use. Together with the choice of the machine, this is the most important part of the simulation.
@@ -100,20 +108,59 @@ pars['Learning']={
     'LearningRate'   : 0.1,
 }
 ```
-Also, notice that we need to specify a stepper.
+Also, notice that we need to specify a stepper, which in this case is a simple Stochastic Gradient Descent (Sgd).
+More details about the steppers can be found [here]({{ site.baseurl }}{% link _docs/learning/steppers.md %}),
+whereas learning algorithms to find the ground state are discussed [here]({{ site.baseurl }}{% link _docs/learning/stochastic_reconfiguration.md %}).
 
-|---
-| Parameter | Possible values | Description | Default value |
-|-|-|-|-
-| *Method* | `Sr` : The Stochastic reconfiguration method |  The chosen method to learn the parameters of the wave-function  | `Sr` |
-| *Nsamples* | Integer value | How many Markov Chain Monte Carlo samples should be performed at each step of the optimization | None |
-| *OutputFile* | A string | The prefix for the output files (the output is then stored in chosen_prefix.log) | None |
-| *StepperType* | One of the Steppers XXX | *Stepper* updates the parameters using the gradient information provided by *Method* | None |
-| *UseIterative* | Boolean | Wheter to use the iterative solver in the Sr method (this is extremely useful when the number of parameters to optimize is very large) | False |
-|===
+## Running the simulation
+
+Once you have finished preparing the input file in python, you can just run:
+
+```shell
+python ising1d.py
+```
+
+this will generate a JSON file called `ising1d.json` ready to be fed to the NetKet executable.
+At this point then you can just run
+
+```shell
+./netket ising1d.json
+```
+
+if you want to run your simulation on a single core, or
+
+```shell
+mpirun -n NP netket ising1d.json
+```
+if you want to run your simulation on `NP` cores (changes NP to the number of cores you want to use).
+
+At this point, the simulation will be running and log files will be generated in real time, until NetKet finishes its tasks.
+
+## Output files
+
+Since in the `Learning` section we have specified ```'OutputFile'     : "test"```, two output files will be generated with the "test" prefix, i.e.
+`test.log`, a JSON file containing the results of the learning procedure as it advances, and `test.wf` containing backups of the optimized wave function.
+
+For each iteration of the learning, the output log contains important information which can visually inspected just opening the file.
 
 
+```json
+"Energy":{"Mean":-14.817586644611739,"Sigma":0.1613372500177537,"Taucorr":0.012691835598671597}
+```
 
+For example, you can see here that we have the expectation value of the energy (`Mean`), its statistical error (`Sigma`), and an estimate of the
+[autocorrelation time](https://en.wikipedia.org/wiki/Autocorrelation) (`Taucorr`). Apart from the `Energy`, the learning algorithm also records
+the `EnergyVariance`, namely $$ \langle \mathcal{H}^2 \rangle - \langle\mathcal{H}\rangle^2 $$ which is smaller and smaller when converging to an exact eigenstate of the Hamiltonian.
+
+If you want, you can also plot these results while the learning is running, just using the convenience script:
+
+```shell
+python plot_ising.py
+```
+
+An example result is shown below, where you can see that the energy would converge to the exact result during the learning.
+
+<img src="{{site.baseurl}}/img/ising.png" class="img-fluid" alt="Responsive image" class="img-thumbnail">
 
 ## References
 ---------------

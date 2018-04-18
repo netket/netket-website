@@ -3,36 +3,90 @@ title: Steppers
 permalink: /docs/steppers/
 ---
 
-A central task in several learning applications is the ability to sample from a given machine.
-For example, in the variational learning one samples quantum numbers $$ s_1\dots s_N $$
-from the probability distribution given by the square modulus of the wave-function:
+The vast majority of learning applications solves the associated optimization problem in an iterative way.
+
+More formally, given a cost function $$ F(\mathbf{p}) $$ to be minimized, depending on a set of $$ \mathbf{p} = p_1 \dots p_M $$,
+then at each step of the optimization, we perform a change in the parameters:
 
 $$
-P(s_1\dots s_N) = |\Psi(s_1\dots s_N) | ^2.
+p^\prime_k = p_k + \mathcal{S}_k,
 $$
 
+i.e. each component is updated with a variation $$ \mathcal{S}_k $$ depending on the current/past set of parameters, and on the function $$ F $$.
+Typically \mathcal{S} contains information directly related to the gradient of $$ F $$.
 
-NetKet implements several local [Metropolis-Hastings](https://en.wikipedia.org/wiki/Metropolis–Hastings_algorithm) moves.
-In this case, the sampler transits from the current set of quantum numbers $$ \mathbf{s} = s_1 \dots s_N $$ to another set $$ \mathbf{s^\prime} = s^\prime_1 \dots s^\prime_N $$. Samplers are then fully specified by the transition probability:
+NetKet implements a series of *steppers*, suitable for situations where the gradient of $$ F $$ (and $$ F $$ itself) is known only stochastically.
+Steppers must be used in conjunction with one of the available learning Methods, specifying the field `StepperType` in the `Learning` section of the input (see for example [here](../stochastic_reconfiguration/)).
+
+
+<h2 class="bg-primary">Stochastic Gradient Descent</h2>
+
+The [Stochastic Gradient Descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) is one of the most popular *steppers* in machine learning applications.
+Given a stochastic estimate of the gradient of the cost function ($$ G(\mathbf{p}) $$), it performs the update:
 
 $$
-T( \mathbf{s} \rightarrow \mathbf{s}^\prime) .
+p^\prime_k = p_k -\eta G_k(\mathbf{p}),
 $$
 
-The [local samplers](../metropolis_local/) implemented in NetKet propose to modify only a limited set of quantum numbers at the time. [Hamiltonian sampler](../metropolis_hamiltonian/) instead use the off-diagonal elements of the Hamiltonian to construct the transition matrix.  
+where $$ \eta $$ is the so-called learning rate. NetKet also implements two extensions to the simple SGD, the first one is $$ L_2 $$ regularization,
+and the second one is the possibility to set a decay factor $$ \gamma \leq 1 $$ for the learning rate, such that at iteration $$ n $$ the learning rate is $$ \eta \gamma^n $$.  
 
-Most samplers can also be used with [parallel-tempering](https://en.wikipedia.org/wiki/Parallel_tempering) moves. In this case, one effectively samples from the a set of probability distributions
+The Stochastic Gradient Descent can be chosen specifying `Sgd` as a `StepperType`.
+
+|---
+| Parameter | Possible values | Description | Default value |
+|-|-|-|-
+| `DecayFactor` | Float |  The decay factor $$ \gamma $$  | 1 |
+| `LearningRate` | Float $$ \leq 1 $$ |  The learning rate $$ \eta $$  | None |
+| `L2Reg` | Float $$ \geq 0 $$ |  The amount of $$ L_2 $$ regularization  | 0 |
+|===
+
+
+### Example
+```python
+pars['Learning']={
+    ...
+    'StepperType'    : 'Sgd',
+    'LearningRate'   : 0.01,
+    ...
+}
+```
+
+<h2 class="bg-primary">AdaMax</h2>
+
+NetKet implements AdaMax, an adaptive stochastic gradient descent method, and a variant of [Adam](https://arxiv.org/pdf/1412.6980.pdf) based on the infinity norm.
+In contrast with the SGD, AdaMax offers the important advantage of being much less sensitive to the choice of the hyper-parameters (for example, the learning rate).
+AdaMax has the important
+Given a stochastic estimate of the gradient of the cost function ($$ G(\mathbf{p}) $$), AdaMax performs an update:
 
 $$
-P_\beta(s_1\dots s_N) \equiv P^\beta(s_1\dots s_N),
+p^\prime_k = p_k + \mathcal{S}_k,
 $$
 
-each associated to an inverse *temperature* $$ 1 \leq \beta_k \leq 0 $$. During the sampling, configurations at different
-*temperatures* are exchanged, to increase ergodicity. Only quantum numbers sampled from $$ \beta =1 $$ (corresponding to the original probability distribution) are retained
-to compute the required expectation values.
+where $$ \mathcal{S}_k $$ implicitly depends on all the history of the optimization up to the current point.
+The NetKet naming convention of the parameters strictly follows the one introduced by the authors of AdaMax.
+For an in-depth description of this method, please refer to Reference 1 (Algorithm 2 therein).
 
-Inverse temperatures are chosen according to the simple form $$ \beta_k = 1 - k/N_{\mathrm{rep}} $$,
-where $$ N_{\mathrm{rep}} $$ is a user-supplied number specifying how many temperatures are to be taken.
-Upon increasing the number of temperatures (or replicas, in the jargon) one can improve the sampling efficiency.
+The Stochastic Gradient Descent can be chosen specifying `AdaMax` as a `StepperType`.
 
-The samplers described below can be used for any quantum system with a local (and finite) discrete Hilbert space.
+|---
+| Parameter | Possible values | Description | Default value |
+|-|-|-|-
+| `Alpha` | Float |  The step size  | 0.001 |
+| `Beta1` | Float $$ \in [0,1] $$ | First exponential decay rate | 0.9 |
+| `Beta2` | Float $$ \in [0,1] $$ |  Second exponential decay rate | 0.999 |
+|===
+
+### Example
+```python
+pars['Learning']={
+    ...
+    'StepperType'    : 'AdaMax',
+    'Alpha'   : 0.01,
+    ...
+}
+```
+
+## References
+---------------
+1. [Kingma, D., & Ba, J. (2015). Adam: a method for stochastic optimization](https://arxiv.org/pdf/1412.6980.pdf)
