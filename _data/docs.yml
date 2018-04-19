@@ -2,8 +2,7 @@
   docs:
   - requirements
   - compiling
-  - explore_examples
-  - write_new
+  - first_steps
 
 - title: Graphs
   docs:

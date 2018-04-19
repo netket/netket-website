@@ -7,15 +7,20 @@ redirect_from: /docs/index.html
 <h2 class="bg-primary">Getting Started</h2>
 NetKet is meant to be easy to install and deploy on most modern platforms.
 
-Here you will find information about the first steps with NetKet.
+You are just three steps away from unleashing the power of artificial neural networks for many-body quantum systems!
 
 1. [Requirements](../requirements/).
 2. [Compiling](../compiling/).
-3. [Find the Examples](../explore_examples/).
-4. [Extend the Code](../write_new/)
+3. [First Steps](../first_steps/).
 
-<h2 class="bg-primary">Examples</h2>
-Once you are familiarized with the structure of NetKet, you can have a more detailed look
-into the several Examples provided.
+<h2 class="bg-primary">Tutorials</h2>
+We provide here a selection of Tutorials, that can be useful to familiarize yourself with NetKet.
 
-1. Transverse-Field Ising Model
+1. [Transverse-Field Ising Model]({{ site.baseurl }}{% link _docs/examples/ising.md %})
+2. [Heisenberg Model]({{ site.baseurl }}{% link _docs/examples/heisenberg.md %})
+3. [Bose-Hubbard Model]({{ site.baseurl }}{% link _docs/examples/bosehubbard.md %})
+
+
+<h2 class="bg-primary">Detailed Documentation</h2>
+A detailed description of the individual components of NetKet is also available.
+Just pick one of the topics from the menu bar on the left, and learn a lot more about `Graphs`, `Hamiltonians`, `Learning`, `Machines`, and `Sampling`.

@@ -3,13 +3,19 @@ title: Compiling
 permalink: /docs/compiling/
 ---
 
-In the main folder, look for the file `Makefile` and edit the following two lines according to your system configuration.
+Once you have fulfilled the necessary steps to get the [required libraries](../requirements/), you are just one step away from fully enjoying NetKet.
+
+Download the latest stable version from here, and unzip the content in a folder of your choice.
+
+At this point, just move to the NetKet folder and just do:
+
+```shell
+make
 ```
-CXX           = mpicxx
 
-EIGEN_INCLUDE = /usr/local/include/eigen3/
+which will trigger the compilation and generate the executable file `netket`.
 
-```
+In the unlikely event you encounter difficulties with this operation, you can have a look at your `Makefile` and change
+the configuration according to your system configuration.
 
-I.e. substitute `mpicxx` with your mpi compiler, and `/usr/local/include/eigen3/` with the directory containing the headers for the Eigen library.
-Once you are done, just type `make` in the command line. This will generate the executable `netket.o`.
+Congratulations now, you have installed NetKet! 

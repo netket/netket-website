@@ -58,7 +58,8 @@ picking one of the [Built-in Hamiltonians]({{ site.baseurl }}{% link _docs/hamil
 Notice that here we specify the maximum number of bosons allowed per site (with the field `Nmax`) and also specify that we want the ground-state
 in the sector with total number of particles fixed, in this specific case we work at unit filling, i.e. $$N_{\mathrm{bosons}} = L $$.
 
-Further notice that NetKet allows to define custom Hamiltonians, simply working at the level of input files, as explained [here]({{ site.baseurl }}{% link _docs/hamiltonians/custom_hamiltonians.md %}).
+Further notice that NetKet allows to define custom Hamiltonians, simply working at the level of input files, as explained
+[here]({{ site.baseurl }}{% link _docs/hamiltonians/custom_hamiltonians.md %}).
 
 
 
