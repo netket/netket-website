@@ -23,6 +23,7 @@
 
 - title: Machines
   docs:
+  - machines_introduction
   - rbm
   - custom_machines
 
