@@ -41,7 +41,7 @@ $$
 \mathcal{H}=J\sum_{i,j} \left(\sigma_{i}^{x}\sigma_{j}^{x}+\sigma_{i}^{y}\sigma_{j}^{y}+\sigma_{i}^{z}\sigma_{j}^{z}\right),
 $$
 
-where the exchange terms runs over pairs of nearest-neighbors on a given graph.
+where the exchange terms run over pairs of nearest-neighbors on a given graph.
 To use this Hamiltonian, you must specify a valid Graph in the input.
 
 |---
