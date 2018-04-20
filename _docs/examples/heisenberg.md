@@ -46,7 +46,7 @@ pars['Hamiltonian']={
 }
 ```
 
-Here we specify the name of the Hamiltonian and also the fact the we want to study,
+Here we specify the name of the Hamiltonian,
 picking one of the [Built-in Hamiltonians]({{ site.baseurl }}{% link _docs/hamiltonians/hardcoded_hamiltonians.md %}). Notice that here we are also specifying that we want the ground-state
 in the sector with total $$ \sigma^z =0 $$.
 
