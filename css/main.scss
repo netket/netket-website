@@ -112,6 +112,22 @@ th, td {
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
-// .panel{
-//   min-height: 100px
-// }
+
+ol {
+  counter-reset: item;
+  list-style: none;
+}
+libullet {
+  counter-increment: item;
+  margin-bottom: 5px;
+}
+libullet:before {
+  margin-right: 10px;
+  content: counter(item);
+  background: lightgray;
+  border-radius: 100%;
+  color: white;
+  width: 1.2em;
+  text-align: center;
+  display: inline-block;
+}

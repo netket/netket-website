@@ -69,7 +69,7 @@ defaults:
     path: _getstarted
     type: getstarted
   values:
-    layout: tutorials
+    layout: getstarted
     sectionid: getstarted
 
 collections:
