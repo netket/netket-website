@@ -1,13 +1,13 @@
 ---
 title: First Steps
-permalink: /docs/first_steps/
+permalink: /getstarted/first_steps/
 ---
 
 Once you have installed NetKet, you can have a look at one of our Tutorials, to get to know the details of the input/output and
 of the algorithms implemented.
 
 We strongly suggest to follow the Tutorials in the order they appear in the menu on the left, starting from
-the Ising model [tutorial]({{ site.baseurl }}{% link _docs/examples/ising.md %}) and then moving on to more complicated
+the Ising model [tutorial]({{ site.baseurl }}{% link _tutorials/ising.md %}) and then moving on to more complicated
 cases.
 
 

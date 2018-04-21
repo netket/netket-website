@@ -1,9 +1,3 @@
-- title: Getting Started
-  docs:
-  - requirements
-  - compiling
-  - first_steps
-
 - title: Graphs
   docs:
   - hardcoded_graphs
@@ -31,10 +25,3 @@
   - sampling_introduction
   - metropolis_local
   - metropolis_hamiltonian
-
-- title: Tutorials
-  docs:
-  - ising
-  - heisenberg
-  - bosehubbard
-  - j1j2

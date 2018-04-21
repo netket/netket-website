@@ -2,25 +2,39 @@
 title: Documentation
 permalink: /docs/home/
 redirect_from: /docs/index.html
+layout: tutorials
 ---
+<br>
 
-<h2 class="bg-primary">Getting Started</h2>
-NetKet is meant to be easy to install and deploy on most modern platforms.
+{% assign kfile = 1 %}
+{% for section in site.data.docs %}
 
-You are just three steps away from unleashing the power of artificial neural networks for many-body quantum systems!
+{% assign rem = kfile | modulo: 3 %}
 
-1. [Requirements](../requirements/).
-2. [Compiling](../compiling/).
-3. [First Steps](../first_steps/).
+{% if rem == 1 %}
+<div class="row ">
+{% endif %}
 
-<h2 class="bg-primary">Tutorials</h2>
-We provide here a selection of Tutorials, that can be useful to familiarize yourself with NetKet.
+<div class="col-sm-4">
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h4>
+    {{section.title}}
+    </h4>
+  </div>
+  <ul class="list-group">
+  {% for item in section.docs %}
+    {% assign item_url = item | prepend:"/docs/" | append:"/" %}
+    {% assign p = site.docs | where:"url", item_url | first %}
+    <a class="list-group-item" href="{{ p.url  | prepend: site.baseurl }}">{{ p.title }}</a>
+  {% endfor %}
+  </ul>
+</div>
+</div>
 
-1. [Transverse-Field Ising Model]({{ site.baseurl }}{% link _docs/examples/ising.md %})
-2. [Heisenberg Model]({{ site.baseurl }}{% link _docs/examples/heisenberg.md %})
-3. [Bose-Hubbard Model]({{ site.baseurl }}{% link _docs/examples/bosehubbard.md %})
+{% if rem == 0  %}
+</div>
+{% endif %}
 
-
-<h2 class="bg-primary">Detailed Documentation</h2>
-A detailed description of the individual components of NetKet is also available.
-Just pick one of the topics from the menu bar on the left, and learn a lot more about `Graphs`, `Hamiltonians`, `Learning`, `Machines`, and `Sampling`.
+{% assign kfile = kfile | plus: 1 %}
+{% endfor %}

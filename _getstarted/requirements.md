@@ -1,6 +1,6 @@
 ---
 title: Requirements
-permalink: /docs/requirements/
+permalink: /getstarted/requirements/
 ---
 
 NetKet is a light-weight framework with minimal dependencies on external libraries.
@@ -57,4 +57,4 @@ If you wanted to use another version of the external libraries, you can always l
 
 NetKet relies on Python for input operations. Also, it is suggested to have [matplotlib](https://matplotlib.org) installed, to fully enjoy our Tutorials.
 
-Most modern operating systems come with Python pre-installed, whereas you can find detailed instructions on how to install matplotlib [here](https://matplotlib.org/users/installing.html). 
+Most modern operating systems come with Python pre-installed, whereas you can find detailed instructions on how to install matplotlib [here](https://matplotlib.org/users/installing.html).

@@ -1,6 +1,7 @@
 ---
 title: Transverse-field Ising model
-permalink: /docs/ising/
+permalink: /tutorials/ising/
+description: Learn how to set up a simulation, define common input parameters, analyze the output, and more.
 ---
 
 The transverse-field Ising model is one of the first things you should look at in order to acquaint yourself with NetKet.
