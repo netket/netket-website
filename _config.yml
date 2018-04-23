@@ -14,6 +14,10 @@ twitter:
 logo:
   /img/logo_small.jpg
 
+latest_release:
+  zip: https://gitlab.com/netket/netket/-/archive/v0.9/netket-v0.9.zip
+  gz: https://gitlab.com/netket/netket/-/archive/v0.9/netket-v0.9.tar.gz
+
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
 bootwatch: flatly

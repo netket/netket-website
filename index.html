@@ -6,7 +6,18 @@ layout: default
     <div class="container">
         <h1><b>NetKet</b></h1>
         <p><font color="white"><b>Machine Learning for Many-Body Quantum Systems</b></font></p>
-        <p><a class="btn btn-primary btn-lg" href="{{ "/getstarted/home/" | prepend: site.baseurl }}" role="button">Get Started</a></p>
+
+        <div class="btn-group">
+        <a class="btn btn-primary btn-lg" href="{{ "/getstarted/home/" | prepend: site.baseurl }}" role="button">Get Started</a>
+        <div class="btn-group">
+          <button type="button" class="btn btn-alert btn-lg dropdown-toggle" data-toggle="dropdown">
+            Download <span class="caret"></span></button>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="{{site.latest_release.zip}}" download>Download zip</a></li>
+              <li><a href="{{site.latest_release.gz}}" download>Download tar.gz</a></li>
+            </ul>
+          </div>
+        </div>
     </div>
 </div>
 

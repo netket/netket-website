@@ -20,7 +20,7 @@ layout: default
   <div class="col-sm-7">
     <ol class="list-group">
        <libullet class="list-group-item" markdown="span">Make sure you have a working [MPI](https://www.open-mpi.org) compiler and a [Python](https://www.python.org) interpreter. </libullet>
-       <libullet class="list-group-item">Download NetKet here.</libullet>
+       <libullet class="list-group-item">Download NetKet (<a href="{{site.latest_release.zip}}" download>zip</a> or <a href="{{site.latest_release.gz}}" download>tar.gz </a>).</libullet>
        <libullet class="list-group-item">Go to the unzipped NetKet folder.</libullet>
        <libullet class="list-group-item" markdown="span">Compile NetKet with `make`.</libullet>
        <libullet class="list-group-item" markdown="span">Explore our [Tutorials]({{ "/tutorials/home/" | prepend: site.baseurl }}).</libullet>

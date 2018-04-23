@@ -5,7 +5,7 @@ permalink: /getstarted/compiling/
 
 Once you have fulfilled the necessary steps to get the [required libraries](../requirements/), you are just one step away from fully enjoying NetKet.
 
-Download the latest stable version from here, and unzip the content in a folder of your choice.
+Download the latest stable version (<a href="{{site.latest_release.zip}}" download>zip</a> or <a href="{{site.latest_release.gz}}" download>tar.gz </a>), and unzip the content in a folder of your choice.
 
 At this point, just move to the NetKet folder and just do:
 
