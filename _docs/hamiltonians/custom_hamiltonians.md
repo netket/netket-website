@@ -75,6 +75,27 @@ $$
 ### Example
 ```python
 #Transverse-Field Ising model on L site
+import numpy as np
+
+sigmax=[[0,1],[1,0]]
+sigmaz=[[1,0],[0,-1]]
+
+mszsz=(np.kron(sigmaz,sigmaz)).tolist()
+
+#Now we define the local operators of our hamiltonian
+#And the sites on which they act
+#Notice that the Transverse-Field Ising model as defined here has sign problem
+operators=[]
+sites=[]
+L=20
+for i in range(L):
+    #\sum_i sigma^x(i)
+    operators.append(sigmax)
+    sites.append([i])
+    #\sum_i sigma^z(i)*sigma^z(i+1)
+    operators.append(mszsz)
+    sites.append([i,(i+1)%L])
+
 pars['Hamiltonian']={
     'ActingOn'       : sites,
     'Operators'      : operators,

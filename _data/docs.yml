@@ -20,6 +20,10 @@
   - rbm
   - custom_machines
 
+- title: Observables
+  docs:
+  - custom_observables
+
 - title: Sampling
   docs:
   - sampling_introduction

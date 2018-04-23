@@ -13,7 +13,7 @@ $$
 \mathcal{H}=-h\sum_{l}\sigma_{l}^{x} -J \sum_{\langle l,m \rangle}\sigma_{l}^{z}\sigma_{m}^{z},
 $$
 
-where the interaction terms runs over pairs of nearest-neighbors on a given graph. In `Tutorials/Ising1d/` this model is studied in the case of a one-dimensional lattice with periodic boundary conditions.
+where the interaction term runs over pairs of nearest-neighbors on a given graph. In `Tutorials/Ising1d/` this model is studied in the case of a one-dimensional lattice with periodic boundary conditions.
 
 
 ## Input file
