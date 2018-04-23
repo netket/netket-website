@@ -7,7 +7,24 @@ permalink: /search/
 
 <script>
   var list_site = [
+
     {% for doc in site.docs %}
+      {
+        'title': '{{ doc.title | xml_escape }}',
+        'content': {{ doc.content  | strip_html |jsonify }},
+        'url': '{{ doc.url | prepend: site.baseurl | xml_escape }}'
+      }
+      ,
+    {% endfor %}
+    {% for doc in site.tutorials %}
+      {
+        'title': '{{ doc.title | xml_escape }}',
+        'content': {{ doc.content  | strip_html |jsonify }},
+        'url': '{{ doc.url | prepend: site.baseurl | xml_escape }}'
+      }
+      ,
+    {% endfor %}
+    {% for doc in site.getstarted %}
       {
         'title': '{{ doc.title | xml_escape }}',
         'content': {{ doc.content  | strip_html |jsonify }},

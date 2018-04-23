@@ -15,6 +15,7 @@ redirect_from: /challenges/index.html
   </div>
 </div>
 
+<div class="container">
 <br>
 
 <div class="row">
@@ -34,7 +35,6 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_3</i></h1>
             <h3 class="text-center">Deep Boltzmann Machines</h3>
-            <br>
             <p class="text-center">Status: <font color="green">Open</font></p>
             <p markdown="span" class="text-justify"> Add two-layer, complex-valued [deep Boltzmann Machines](https://en.wikipedia.org/wiki/Boltzmann_machine#Deep_Boltzmann_machine) with a few deep units, as a built-in [Machine]({{ "/docs/machines_introduction" | prepend: site.baseurl }}).</p>
         </div>
@@ -44,7 +44,6 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_4</i></h1>
             <h3 class="text-center">Supervised Learning</h3>
-            <br>
             <p class="text-center">Status: <font color="green">Open</font></p>
             <p markdown="span" class="text-justify"> Add [learning methods]({{ "/docs/learning_introduction" | prepend: site.baseurl }}) to perform [supervised learning](https://en.wikipedia.org/wiki/Supervised_learning) with the neural-network quantum states in NetKet.</p>
         </div>
@@ -81,7 +80,7 @@ redirect_from: /challenges/index.html
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_9_plus</i></h1>
             <h3 class="text-center">Bring your own challenge</h3>
             <p class="text-center">Status: <font color="green">Open</font></p>
-            <p markdown="span" class="text-justify"> Feel free to [suggest](mailto:netket@netket.org) your own NetKet challenge, the only limit is your imagination.</p>
+            <p markdown="span" class="text-justify"> Feel free to [suggest](mailto:netket@netket.org) your own NetKet challenge, the only limit is your imagination (and feasibility!).</p>
         </div>
 </div>
 <br>
@@ -97,4 +96,6 @@ redirect_from: /challenges/index.html
   </div>
   </div>
   </div>
+</div>
+
 </div>

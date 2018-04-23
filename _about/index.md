@@ -3,82 +3,99 @@ title: About NetKet
 permalink: /about/home/
 redirect_from: /about/index.html
 ---
-<div class="container">
+
 
 <div class="jumbotron">
-    <h1>More about NetKet</h1>
-    <p class="text-justify"> NetKet is an open-source library and a collaborative platform for the development and use of machine learning techniques for many-body quantum systems.</p>
+    <div class="row">
+    <div class="col-sm-8 col-sm-offset-2">
+    <h4 class="text-muted"><div class="text-center">About NetKet</div></h4>
+    <h3 class="text-center"> NetKet's mission is to provide researchers with state-of-the-art machine learning techniques for many-body quantum systems.</h3>
+    </div>
+    </div>
+    <br>
+    <p class="text-center"><a class="btn btn-info btn-lg" href="https://twitter.com/NetKetOrg" role="button">Follow us on Twitter</a></p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+    <img src="{{site.baseurl}}/img/logo_small.jpg" >
+    </div>
   </div>
 
-<div class="row">
-
-<div class="col-sm-7">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+     <h4 class="text-center"> There is a fast-growing interest in neural-network-based approaches to solve the quantum many-body problem. NetKet is the first open-source platform for collaborative developments in the field.</h4>    
+    </div>
+  </div>
 
 <br>
-<p class="text-justify"> Born in 2018, at the Flatiron Institute, it is the first large-scale open project to answer the growing demand of tools  </p>
-</div>
-
-    <div class="col-sm-4">
-    <img src="{{site.baseurl}}/img/logo_small.jpg" class="img-fluid" alt="Responsive image" style="max-width: 80%;height: auto;">
-    </div>
-
-
-
-</div>
-</div>
-
-
+<br>
 
 <div class="row">
-<div class="col-sm-10 col-sm-offset-1">
-<div class="panel panel-default">
-  <div class="panel-heading"><h2 class="text-center">The team</h2></div>
-  <div class="panel-body">
+<div class="col-sm-6 col-sm-offset-3 ">
+<h1 class="text-center">Team</h1>
+</div>
+</div>
+
+<div class="row">
   <div class="col-sm-4 col-sm-offset-1">
-    <div class="card">
-      <img src="img1.jpg" alt="Jane" style="width:100%">
-      <div class="container">
-        <h2>Giuseppe Carleo</h2>
-        <p class="title">Developer Lead &amp; Founder</p>
-        <p><button class="button">Contact</button></p>
+  <div class="thumbnail">
+      <img src="{{ "/img/carleo.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="https://www.simonsfoundation.org/team/giuseppe-carleo/">
+        <h2 class="text-center">Giuseppe Carleo</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Developer Lead &amp; Founder</p></div>
+
+      <p class="text-center">   
+      <a href="https://twitter.com/gppcarleo"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+      <a href="mailto:gcarleo@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
       </div>
-    </div>
+  </div>      
   </div>
 
   <div class="col-sm-4 col-sm-offset-2">
-    <div class="card">
-      <img src="{{site.baseurl}}/img/logo_small.png" alt="Mike" style="width:100%">
-      <div class="container">
-        <h2>Join the team Now!</h2>
-        <p class="title">Art Director</p>
-        <p><button class="button">Contact</button></p>
-      </div>
+  <div class="thumbnail">
+    <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
+    <div class="caption">
+      <a href="{{ "/challenges/home" | prepend: site.baseurl }}">
+      <h2 class="text-center">Join us now!</h2>
+      </a>
+      <div class="text-muted"><p class="text-center">Get Involved</p></div>
+      <p class="text-center">   
+      <a href="https://twitter.com/NetKetOrg"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+      <a href="mailto:netket@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
     </div>
+  </div>        
   </div>
-  </div>
-</div>
-</div>
 </div>
 
 
+
+<br>
 <div class="row">
-<div class="col-sm-10 col-sm-offset-1">
-<div class="panel panel-default">
-  <div class="panel-heading"><h2 class="text-center">Sponsors</h2></div>
-  <div class="panel-body">
+<h1 class="text-center">Sponsors</h1>
+</div>
+
 <div class="row">
   <div class="col-sm-4 col-sm-offset-1">
-    <div class="card">
-      <img src="{{site.baseurl}}/img/simons.jpg" class="img-fluid" alt="Responsive image" class="img-thumbnail">
-    </div>
+    <div class="thumbnail">
+      <a href="https://www.simonsfoundation.org"><img src="{{site.baseurl}}/img/simons.jpg" class="img-rounded"></a>
+
+    </div>  
   </div>
 
   <div class="col-sm-4 col-sm-offset-2">
-    <div class="card">
-    <img src="{{site.baseurl}}/img/flatiron.png" class="img-fluid" alt="Responsive image" class="img-thumbnail">
-    </div>
+    <div class="thumbnail">
+    <a href="https://www.simonsfoundation.org/flatiron/center-for-computational-quantum-physics/"><img src="{{site.baseurl}}/img/flatiron.png" class="img-fluid" class="img-rounded"></a>
+    </div>  
   </div>
-  </div>
-  </div>
-</div>
+
+
 </div>
