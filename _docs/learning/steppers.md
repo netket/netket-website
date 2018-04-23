@@ -3,7 +3,7 @@ title: Steppers
 permalink: /docs/steppers/
 ---
 
-The vast majority of learning applications solves the associated optimization problem in an iterative way.
+The vast majority of learning applications solves the associated high-dimensional optimization problem in an iterative way.
 
 More formally, given a cost function $$ F(\mathbf{p}) $$ to be minimized, depending on a set of $$ \mathbf{p} = p_1 \dots p_M $$,
 then at each step of the optimization, we perform a change in the parameters:
@@ -12,8 +12,8 @@ $$
 p^\prime_k = p_k + \mathcal{S}_k,
 $$
 
-i.e. each component is updated with a variation $$ \mathcal{S}_k $$ depending on the current/past set of parameters, and on the function $$ F $$.
-Typically \mathcal{S} contains information directly related to the gradient of $$ F $$.
+i.e. each component is updated with a variation $$ \mathcal{S}_k $$ depending on the current/past set of parameters, and on the cost function $$ F $$.
+Typically, but not exclusively, \mathcal{S} contains information directly related to the gradient of $$ F $$.
 
 NetKet implements a series of *steppers*, suitable for situations where the gradient of $$ F $$ (and $$ F $$ itself) is known only stochastically.
 Steppers must be used in conjunction with one of the available learning Methods, specifying the field `StepperType` in the `Learning` section of the input (see for example [here](../stochastic_reconfiguration/)).
@@ -55,8 +55,8 @@ pars['Learning']={
 <h2 class="bg-primary">AdaMax</h2>
 
 NetKet implements AdaMax, an adaptive stochastic gradient descent method, and a variant of [Adam](https://arxiv.org/pdf/1412.6980.pdf) based on the infinity norm.
-In contrast with the SGD, AdaMax offers the important advantage of being much less sensitive to the choice of the hyper-parameters (for example, the learning rate).
-AdaMax has the important
+In contrast to the SGD, AdaMax offers the important advantage of being much less sensitive to the choice of the hyper-parameters (for example, the learning rate).
+
 Given a stochastic estimate of the gradient of the cost function ($$ G(\mathbf{p}) $$), AdaMax performs an update:
 
 $$

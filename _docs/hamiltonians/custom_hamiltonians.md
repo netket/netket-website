@@ -101,8 +101,3 @@ pars['Hamiltonian']={
     'Operators'      : operators,
 }
 ```
-
-
-## References
----------------
-1. [Carleo, G., & Troyer, M. (2017). Solving the quantum many-body problem with artificial neural networks. Science, 355 602](http://science.sciencemag.org/content/355/6325/602)

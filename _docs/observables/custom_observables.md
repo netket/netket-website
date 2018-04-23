@@ -3,7 +3,7 @@ title: Custom Observables
 permalink: /docs/custom_observables/
 ---
 
-NetKet provides the freedom to define user's defined Observables, which are measured during the learning procedure.
+NetKet provides the freedom to have user's defined Observables, which are measured during the learning procedure.
 Custom Observables follow the same concepts discussed for
 [custom Hamiltonians]({{ site.baseurl }}{% link _docs/hamiltonians/custom_hamiltonians.md %}).
 It is possible to add an observable specifying the relevant operators
@@ -16,8 +16,8 @@ $$
 $$
 
 where the operators $$ o_i $$ act on an (arbitrary) subset of sites. In order to define your custom
-Observable, you need to specify the operators $$ o_i $$. Notice here the Hilbert space is derived from the definition of
-the Hamiltonian, and Observables compatible with the Hamiltonian Hilbert space must be declared by the user.
+Observable, you need to specify the operators $$ o_i $$. Notice that here the Hilbert space is derived from the definition of
+the Hamiltonian, thus users must specify Observables compatible with the Hamiltonian Hilbert space.
 
 
 <h2 class="bg-primary">Local Operators</h2>
@@ -70,8 +70,3 @@ pars['Observables']={
 }
 
 ```
-
-
-## References
----------------
-1. [Carleo, G., & Troyer, M. (2017). Solving the quantum many-body problem with artificial neural networks. Science, 355 602](http://science.sciencemag.org/content/355/6325/602)

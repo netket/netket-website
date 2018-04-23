@@ -6,7 +6,7 @@ description: >
 
 baseurl: "/netket-website" # the subpath of your site, e.g. /blog/
 url: https://netket.gitlab.io/ # the base hostname & protocol for your site
-git_address: https://netket.gitlab.io/
+git_address: https://github.com/NetKet/netket
 
 twitter:
   username: NetKetOrg
@@ -15,8 +15,8 @@ logo:
   /img/logo_small.jpg
 
 latest_release:
-  zip: https://gitlab.com/netket/netket/-/archive/v0.9/netket-v0.9.zip
-  gz: https://gitlab.com/netket/netket/-/archive/v0.9/netket-v0.9.tar.gz
+  zip: https://github.com/netket/netket/archive/v1.0.zip
+  gz: https://github.com/netket/netket/archive/v1.0.tar.gz
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap

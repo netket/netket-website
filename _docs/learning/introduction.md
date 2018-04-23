@@ -3,7 +3,7 @@ title: Introduction
 permalink: /docs/learning_introduction/
 ---
 
-A central task in machine learning applications for quantum many-body applications is certainly
+A central task in machine learning applications for quantum many-body systems is certainly
 the *learning* part. Loosely speaking, learning refers to a high-dimensional (and typically non-linear) optimization of
 the parameters entering a machine, in order to solve a certain task.
 
@@ -13,7 +13,7 @@ The algorithms to perform this learning task, as implemented in NetKet, are desc
 In addition to finding the ground-state of a given Hamiltonian, there are other learning tasks that can be performed using the machines implemented in NetKet.
 For example, supervised learning with *Born machines* (3,4), or unsupervised learning to perform state-reconstruction (5).
 
-The corresponding learning algorithms will be implemented in future versions of NetKet. See also our [Challenges]({{ "/challenges/home/" | prepend: site.baseurl }}), if you would like to contribute to the developments in these directions.
+The corresponding learning algorithms will be implemented in future versions of NetKet. See also our [Challenges]({{ "/challenges/home/" | prepend: site.baseurl }}), if you would like to contribute to developments in these directions.
 
 ## References
 ---------------

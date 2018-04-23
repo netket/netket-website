@@ -18,8 +18,8 @@ redirect_from: /about/index.html
 
 <div class="container">
   <div class="row">
-    <div class="col-sm-6 col-sm-offset-3">
-    <img src="{{site.baseurl}}/img/logo_small.jpg" >
+    <div class="col-sm-12">
+    <img src="{{site.baseurl}}/img/logo_simple.jpg" style="height: 360px" class="center-block">
     </div>
   </div>
 
@@ -29,6 +29,9 @@ redirect_from: /about/index.html
     </div>
   </div>
 
+<br>
+<br>
+<br>
 <br>
 <br>
 
@@ -79,6 +82,11 @@ redirect_from: /about/index.html
 
 
 <br>
+<br>
+<br>
+<br>
+<br>
+
 <div class="row">
 <h1 class="text-center">Sponsors</h1>
 </div>

@@ -21,20 +21,20 @@ redirect_from: /challenges/index.html
 <div class="row">
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_1</i></h1>
-            <h3 class="text-center">Convolutional neural networks</h3>
+            <h3 class="text-center">Convolutional</h3>
             <p class="text-center">Status: <font color="green">Open</font></p>
             <p markdown="span" class="text-justify">Add complex-valued [convolutional neural networks](https://en.wikipedia.org/wiki/Convolutional_neural_network) as a built-in [Machine]({{ "/docs/machines_introduction" | prepend: site.baseurl }}).
             </p>
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_2</i></h1>
-            <h3 class="text-center">Feed-Forward Neural Networks</h3>
+            <h3 class="text-center">Feed-Forward</h3>
             <p class="text-center">Status: <font color="orange">Assigned</font></p>
             <p markdown="span" class="text-justify"> Add complex-valued [feed-forward neural networks](https://en.wikipedia.org/wiki/Feedforward_neural_network) as a built-in [Machine]({{ "/docs/machines_introduction" | prepend: site.baseurl }}).</p>
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_3</i></h1>
-            <h3 class="text-center">Deep Boltzmann Machines</h3>
+            <h3 class="text-center">Deep Boltzmann</h3>
             <p class="text-center">Status: <font color="green">Open</font></p>
             <p markdown="span" class="text-justify"> Add two-layer, complex-valued [deep Boltzmann Machines](https://en.wikipedia.org/wiki/Boltzmann_machine#Deep_Boltzmann_machine) with a few deep units, as a built-in [Machine]({{ "/docs/machines_introduction" | prepend: site.baseurl }}).</p>
         </div>
@@ -65,7 +65,7 @@ redirect_from: /challenges/index.html
 <div class="row">
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_7</i></h1>
-            <h3 class="text-center">Built-in graphs</h3>
+            <h3 class="text-center">Built-in Graphs</h3>
             <p class="text-center">Status: <font color="orange">Assigned</font></p>
             <p markdown="span" class="text-justify"> Adding new built-in graphs to NetKet and reduce dependence on external libraries.
             </p>
@@ -78,7 +78,7 @@ redirect_from: /challenges/index.html
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_9_plus</i></h1>
-            <h3 class="text-center">Bring your own challenge</h3>
+            <h3 class="text-center">More</h3>
             <p class="text-center">Status: <font color="green">Open</font></p>
             <p markdown="span" class="text-justify"> Feel free to [suggest](mailto:netket@netket.org) your own NetKet challenge, the only limit is your imagination (and feasibility!).</p>
         </div>
