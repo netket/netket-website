@@ -129,3 +129,13 @@ libullet:before {
 .thumbnail {
   height: 100%;
 }
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+/* Extra small devices (767px and down) */
+@media (max-width: 767px) {
+    .row.vertical-align {
+        display: block; /* Turn off the flexible box layout */
+    }
+}
