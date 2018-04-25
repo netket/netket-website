@@ -50,7 +50,7 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_5</i></h1>
             <h3 class="text-center">Unsupervised Learning</h3>
-            <p class="text-center">Status: <font color="green">Open</font></p>
+            <p class="text-center">Status: <font color="orange">Assigned</font></p>
             <p markdown="span" class="text-justify"> Add [learning methods]({{ "/docs/learning_introduction" | prepend: site.baseurl }}) to perform [unsupervised learning](https://en.wikipedia.org/wiki/Unsupervised_learning) with the neural-network quantum states in NetKet.
             </p>
         </div>
