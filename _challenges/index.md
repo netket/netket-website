@@ -22,7 +22,7 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_1</i></h1>
             <h3 class="text-center">Convolutional</h3>
-            <p class="text-center">Status: <font color="green">Open</font></p>
+            <p class="text-center">Status: <font color="orange">Assigned</font></p>
             <p markdown="span" class="text-justify">Add complex-valued [convolutional neural networks](https://en.wikipedia.org/wiki/Convolutional_neural_network) as a built-in [Machine]({{ "/docs/machines_introduction" | prepend: site.baseurl }}).
             </p>
         </div>
