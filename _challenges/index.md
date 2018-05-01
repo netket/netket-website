@@ -35,7 +35,7 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_3</i></h1>
             <h3 class="text-center">Deep Boltzmann</h3>
-            <p class="text-center">Status: <font color="green">Open</font></p>
+            <p class="text-center">Status: <font color="orange">Assigned</font></p>
             <p markdown="span" class="text-justify"> Add two-layer, complex-valued [deep Boltzmann Machines](https://en.wikipedia.org/wiki/Boltzmann_machine#Deep_Boltzmann_machine) with a few deep units, as a built-in [Machine]({{ "/docs/machines_introduction" | prepend: site.baseurl }}).</p>
         </div>
 </div>
@@ -44,7 +44,7 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_4</i></h1>
             <h3 class="text-center">Supervised Learning</h3>
-            <p class="text-center">Status: <font color="green">Open</font></p>
+            <p class="text-center">Status: <font color="orange">Assigned</font></p>
             <p markdown="span" class="text-justify"> Add [learning methods]({{ "/docs/learning_introduction" | prepend: site.baseurl }}) to perform [supervised learning](https://en.wikipedia.org/wiki/Supervised_learning) with the neural-network quantum states in NetKet.</p>
         </div>
         <div class="col-sm-4">
@@ -73,7 +73,7 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_8</i></h1>
             <h3 class="text-center">Steppers</h3>
-            <p class="text-center">Status: <font color="green">Open</font></p>
+            <p class="text-center">Status: <font color="orange">Assigned</font></p>
             <p markdown="span" class="text-justify"> Extend the current choice of [steppers]({{ "/docs/steppers" | prepend: site.baseurl }}), for example taking inspiration from the excellent selection available in [TensorFlow](https://www.tensorflow.org/api_guides/python/train#Optimizers).  </p>
         </div>
         <div class="col-sm-4">
