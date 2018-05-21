@@ -118,7 +118,7 @@ this will generate a JSON file called `heisenberg1d.json` ready to be fed to the
 At this point then you can just run
 
 ```shell
-./netket heisenberg1d.json
+netket heisenberg1d.json
 ```
 
 if you want to run your simulation on a single core, or

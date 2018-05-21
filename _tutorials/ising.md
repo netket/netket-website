@@ -112,7 +112,7 @@ this will generate a JSON file called `ising1d.json` ready to be fed to the NetK
 At this point then you can just run
 
 ```shell
-./netket ising1d.json
+netket ising1d.json
 ```
 
 if you want to run your simulation on a single core, or
@@ -122,7 +122,10 @@ mpirun -n NP netket ising1d.json
 ```
 if you want to run your simulation on `NP` cores (changes NP to the number of cores you want to use).
 
-At this point, the simulation will be running and log files will be generated in real time, until NetKet finishes its tasks.
+At this point, the simulation will be running and log files will be generated and continuously updated.
+On a single (modern) CPU, this Tutorial should take about 2 or 3 minutes to complete.
+Running on multiple cores will reduce the running time, keeping in mind that for small quantum systems/ small number of samples,
+the benefits of parallelism are much less pronounced than for larger-scale simulations. 
 
 ## Output files
 

@@ -7,15 +7,18 @@ Once you have fulfilled the necessary steps to get the [required libraries](../r
 
 Download the latest stable version (<a href="{{site.latest_release.zip}}" download>zip</a> or <a href="{{site.latest_release.gz}}" download>tar.gz </a>), and unzip the content in a folder of your choice.
 
-At this point, just move to the NetKet folder and just do:
+At this point, move to the NetKet folder and trigger the build using `CMake`
 
 ```shell
-make
+mkdir build && cd build && cmake .. && make -j
 ```
 
-which will trigger the compilation and generate the executable file `netket`.
+which will generate the executable file `netket` in the `/build` directory.
 
-In the unlikely event you encounter difficulties with this operation, you can have a look at your `Makefile` and change
-the configuration according to your system configuration.
+Optionally, you can also permanently install the `netket` executable doing
+
+```shell
+make install
+```
 
 Congratulations now, you have installed NetKet!

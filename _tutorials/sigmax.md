@@ -68,7 +68,7 @@ this will generate a JSON file called `sigmax.json` ready to be fed to the NetKe
 At this point then you can just run
 
 ```shell
-./netket sigmax.json
+netket sigmax.json
 ```
 
 if you want to run your simulation on a single core, or
@@ -78,7 +78,7 @@ mpirun -n NP netket sigmax.json
 ```
 if you want to run your simulation on `NP` cores (changes NP to the number of cores you want to use).
 
-At this point, the simulation will be running and log files will be generated in real time, until NetKet finishes its tasks.
+At this point, the simulation will be running and log files will be continuously updated, until NetKet finishes its tasks.
 
 ## Output files
 

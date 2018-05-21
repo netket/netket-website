@@ -127,7 +127,7 @@ this will generate a JSON file called `bosehubbard1d.json` ready to be fed to th
 At this point then you can just run
 
 ```shell
-./netket bosehubbard1d.json
+netket bosehubbard1d.json
 ```
 
 if you want to run your simulation on a single core, or
