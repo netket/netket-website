@@ -15,8 +15,8 @@ logo:
   /img/logo_small.jpg
 
 latest_release:
-  zip: https://github.com/netket/netket/archive/v1.0.1.zip
-  gz: https://github.com/netket/netket/archive/v1.0.1.tar.gz
+  zip: https://github.com/netket/netket/archive/v1.0.2.zip
+  gz: https://github.com/netket/netket/archive/v1.0.2.tar.gz
 
 # theme options from https://bootswatch.com/
 # comment out this to use default Bootstrap
