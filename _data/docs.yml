@@ -18,6 +18,7 @@
   docs:
   - machines_introduction
   - rbm
+  - feedforward
   - custom_machines
 
 - title: Observables
