@@ -19,7 +19,7 @@ $$
 \boldsymbol{\sigma} = \boldsymbol{v}_{0} \rightarrow \boldsymbol{v}_{1} \rightarrow \dots \rightarrow v_{n} = \Psi(\boldsymbol{\sigma})
 $$
 
-There are other variations regarding the transformation applied at each layer but the basic idea remains the same, for instance convolutional layers where there is some element of parameter sharing among the elements of the weight matrix $$ \boldsymbol{W}_{n}. However, at the moment the only available layer is the fully connected one.
+There are other variations regarding the transformation applied at each layer but the basic idea remains the same, for instance convolutional layers where there is some element of parameter sharing among the elements of the weight matrix $$ \boldsymbol{W}_{n} $$. However, at the moment the only available layer is the fully connected one.
 
 <h2 class="bg-primary">FFNN</h2>
 To use the feedforward neural network (FFNN) one must specify a list of layers one wants to use.
@@ -44,7 +44,7 @@ pars['Machine']={
 
 The above example constructs a feedforward neural network comprising of three fully connected layers, with the following node structure: $$ 20 \rightarrow 20 \rightarrow 10 \rightarrow 1 $$. The third layer is a fully connected layer with identity activation function. This layer is added automatically so that the number of output nodes is one.
 
-<h2 class="bg-primary">FullyConnected</h2>
+<h3 class="bg-primary">FullyConnected Layer</h3>
 
 |---
 | Parameter | Possible values | Description | Default value |

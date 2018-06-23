@@ -6,8 +6,7 @@ permalink: /docs/custom_machines/
 In addition to [Built-in machines]({{ site.baseurl }}{% link _docs/machines/rbm.md %})  NetKet
 can be extended with user-defined custom machines.
 
-At variance with custom [Graphs]({{ site.baseurl }}{% link _docs/graphs/custom_graphs.md %})
-and custom [Hamiltonians]({{ site.baseurl }}{% link _docs/hamiltonians/custom_hamiltonians.md %}),
+At variance with custom [Graphs]({{ site.baseurl }}{% link _docs/graphs/custom_graphs.md %}), [Hamiltonians]({{ site.baseurl }}{% link _docs/hamiltonians/custom_hamiltonians.md %}), and [Observables]({{ site.baseurl }}{% link _docs/observables/custom_observables.md %})
 providing a new machine requires some coding in C++.
 
 Specifically, your machine must be derived from the base abstract class in `Machines/abstract_machine.hpp`,
