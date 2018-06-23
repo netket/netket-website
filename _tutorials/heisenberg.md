@@ -99,11 +99,15 @@ pars['Learning']={
     'Diagshift'      : 0.1,
     'UseIterative'   : False,
     'OutputFile'     : 'test',
-    'StepperType'    : 'AdaMax',
 }
 ```
-Also, notice that we need to specify a stepper, which in this case is AdaMax.
-More details about the steppers can be found [here]({{ site.baseurl }}{% link _docs/learning/steppers.md %}),
+Also, notice that we need to specify an optimizer. Here we choose AdaMax with default parameters, specifying the following section of the input:
+```python
+pars['Optimizer']={
+    'Name'           : 'AdaMax',
+]
+```
+More details about the optimizers can be found [here]({{ site.baseurl }}{% link _docs/learning/optimizers.md %}),
 whereas learning algorithms to find the ground state are discussed [here]({{ site.baseurl }}{% link _docs/learning/stochastic_reconfiguration.md %}).
 
 ## Running the simulation

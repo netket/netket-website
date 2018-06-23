@@ -72,9 +72,9 @@ redirect_from: /challenges/index.html
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_8</i></h1>
-            <h3 class="text-center">Steppers</h3>
+            <h3 class="text-center">Optimizers</h3>
             <p class="text-center">Status: <font color="orange">Assigned</font></p>
-            <p markdown="span" class="text-justify"> Extend the current choice of [steppers]({{ "/docs/steppers" | prepend: site.baseurl }}), for example taking inspiration from the excellent selection available in [TensorFlow](https://www.tensorflow.org/api_guides/python/train#Optimizers).  </p>
+            <p markdown="span" class="text-justify"> Extend the current choice of [optimizers]({{ "/docs/optimizers" | prepend: site.baseurl }}), for example taking inspiration from the excellent selection available in [TensorFlow](https://www.tensorflow.org/api_guides/python/train#Optimizers).  </p>
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_9_plus</i></h1>

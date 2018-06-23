@@ -1,6 +1,6 @@
 ---
-title: Steppers
-permalink: /docs/steppers/
+title: Optimizers
+permalink: /docs/optimizers/
 ---
 
 The vast majority of learning applications solves the associated high-dimensional optimization problem in an iterative way.
@@ -13,15 +13,16 @@ p^\prime_k = p_k + \mathcal{S}_k,
 $$
 
 i.e. each component is updated with a variation $$ \mathcal{S}_k $$ depending on the current/past set of parameters, and on the cost function $$ F $$.
-Typically, but not exclusively, \mathcal{S} contains information directly related to the gradient of $$ F $$.
+Typically, but not exclusively, $$ \mathcal{S} $$ contains information directly related to the gradient of $$ F $$.
 
-NetKet implements a series of *steppers*, suitable for situations where the gradient of $$ F $$ (and $$ F $$ itself) is known only stochastically.
-Steppers must be used in conjunction with one of the available learning Methods, specifying the field `StepperType` in the `Learning` section of the input (see for example [here](../stochastic_reconfiguration/)).
+NetKet implements a series of *optimizers*, suitable for situations where the gradient of $$ F $$ (and $$ F $$ itself) is known only stochastically.
+Optimizers are used in conjunction with one of the available learning Methods,
+specifying the field `Name` in the `Optimizer` section of the input (see for example [here](../stochastic_reconfiguration/)).
 
 
 <h2 class="bg-primary">Stochastic Gradient Descent</h2>
 
-The [Stochastic Gradient Descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) is one of the most popular *steppers* in machine learning applications.
+The [Stochastic Gradient Descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) is one of the most popular *optimizers* in machine learning applications.
 Given a stochastic estimate of the gradient of the cost function ($$ G(\mathbf{p}) $$), it performs the update:
 
 $$
@@ -31,7 +32,7 @@ $$
 where $$ \eta $$ is the so-called learning rate. NetKet also implements two extensions to the simple SGD, the first one is $$ L_2 $$ regularization,
 and the second one is the possibility to set a decay factor $$ \gamma \leq 1 $$ for the learning rate, such that at iteration $$ n $$ the learning rate is $$ \eta \gamma^n $$.  
 
-The Stochastic Gradient Descent can be chosen specifying `Sgd` as a `StepperType`.
+The Stochastic Gradient Descent can be chosen specifying `Sgd` as a `Name`.
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -44,9 +45,8 @@ The Stochastic Gradient Descent can be chosen specifying `Sgd` as a `StepperType
 
 ### Example
 ```python
-pars['Learning']={
-    ...
-    'StepperType'    : 'Sgd',
+pars['Optimizer']={
+    'Name'    : 'Sgd',
     'LearningRate'   : 0.01,
     ...
 }
@@ -67,7 +67,7 @@ where $$ \mathcal{S}_k $$ implicitly depends on all the history of the optimizat
 The NetKet naming convention of the parameters strictly follows the one introduced by the authors of AdaMax.
 For an in-depth description of this method, please refer to Reference 1 (Algorithm 2 therein).
 
-The Stochastic Gradient Descent can be chosen specifying `AdaMax` as a `StepperType`.
+The Stochastic Gradient Descent can be chosen specifying `AdaMax` as a `Name`.
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -79,9 +79,8 @@ The Stochastic Gradient Descent can be chosen specifying `AdaMax` as a `StepperT
 
 ### Example
 ```python
-pars['Learning']={
-    ...
-    'StepperType'    : 'AdaMax',
+pars['Optimizer']={
+    'Name'    : 'AdaMax',
     'Alpha'   : 0.01,
     ...
 }
