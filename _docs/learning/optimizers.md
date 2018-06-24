@@ -105,10 +105,8 @@ The Momentum optimizer can be chosen by specifying `Name`:`Momentum` in pars[`Op
 ### Example
 ```python
 pars['Optimizer']={
-    ...
     'Name'    : 'Momentum',
     'LearningRate'   : 0.01,
-    ...
 }
 ```
 
@@ -135,10 +133,8 @@ The AdaGrad optimizer can be chosen by specifying `Name`:`AdaGrad` in pars[`Opti
 ### Example
 ```python
 pars['Optimizer']={
-    ...
     'Name'    : 'AdaGrad',
     'LearningRate'   : 0.01,
-    ...
 }
 ```
 
