@@ -1,6 +1,6 @@
 ---
-title: Steppers
-permalink: /docs/steppers/
+title: Optimizers
+permalink: /docs/optimizers/
 ---
 
 The vast majority of learning applications solves the associated high-dimensional optimization problem in an iterative way.
@@ -15,13 +15,13 @@ $$
 i.e. each component is updated with a variation $$ \mathcal{S}_k $$ depending on the current/past set of parameters, and on the cost function $$ F $$.
 Typically, but not exclusively, $$\mathcal{S}$$ contains information directly related to the gradient of $$ F $$.
 
-NetKet implements a series of *steppers*, suitable for situations where the gradient of $$ F $$ (and $$ F $$ itself) is known only stochastically.
-Steppers must be used in conjunction with one of the available learning Methods, specifying the field `StepperType` in the `Learning` section of the input (see for example [here](../stochastic_reconfiguration/)).
+NetKet implements a series of *optimizers*, suitable for situations where the gradient of $$ F $$ (and $$ F $$ itself) is known only stochastically.
+Optimizers must be used in conjunction with one of the available learning Methods, specifying the field `Name` in the `Optimizer` section of the input (see for example [here](../stochastic_reconfiguration/)).
 
 
 <h2 class="bg-primary">Stochastic Gradient Descent</h2>
 
-The [Stochastic Gradient Descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) is one of the most popular *steppers* in machine learning applications.
+[Stochastic Gradient Descent](https://en.wikipedia.org/wiki/Stochastic_gradient_descent) is one of the most popular *optimizers* in machine learning applications.
 Given a stochastic estimate of the gradient of the cost function ($$ G(\mathbf{p}) $$), it performs the update:
 
 $$
@@ -31,7 +31,7 @@ $$
 where $$ \eta $$ is the so-called learning rate. NetKet also implements two extensions to the simple SGD, the first one is $$ L_2 $$ regularization,
 and the second one is the possibility to set a decay factor $$ \gamma \leq 1 $$ for the learning rate, such that at iteration $$ n $$ the learning rate is $$ \eta \gamma^n $$.  
 
-The Stochastic Gradient Descent can be chosen specifying `Sgd` as a `StepperType`.
+The Stochastic Gradient Descent optimizer can be chosen specifying `Name`:`Sgd` in pars[`Optimizer`].
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -44,9 +44,9 @@ The Stochastic Gradient Descent can be chosen specifying `Sgd` as a `StepperType
 
 ### Example
 ```python
-pars['Learning']={
+pars['Optimizer']={
     ...
-    'StepperType'    : 'Sgd',
+    'Name'    : 'Sgd',
     'LearningRate'   : 0.01,
     ...
 }
@@ -67,7 +67,7 @@ where $$ \mathcal{S}_k $$ implicitly depends on all the history of the optimizat
 The NetKet naming convention of the parameters strictly follows the one introduced by the authors of AdaMax.
 For an in-depth description of this method, please refer to Reference 1 (Algorithm 2 therein).
 
-The AdaMax stepper can be chosen specifying `AdaMax` as a `StepperType`.
+The AdaMax optimizer can be chosen by specifying `Name`:`AdaMax` in pars[`Optimizer`].
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -79,9 +79,9 @@ The AdaMax stepper can be chosen specifying `AdaMax` as a `StepperType`.
 
 ### Example
 ```python
-pars['Learning']={
+pars['Optimizer']={
     ...
-    'StepperType'    : 'AdaMax',
+    'Name'    : 'AdaMax',
     'Alpha'   : 0.01,
     ...
 }
@@ -96,7 +96,7 @@ p^\prime_k &= \eta m^\prime_k
 \end{aligned}
 $$
 
-The Momentum stepper can be chosen specifying `Momentum` as a `StepperType`.
+The Momentum optimizer can be chosen by specifying `Name`:`Momentum` in pars[`Optimizer`].
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -107,9 +107,9 @@ The Momentum stepper can be chosen specifying `Momentum` as a `StepperType`.
 
 ### Example
 ```python
-pars['Learning']={
+pars['Optimizer']={
     ...
-    'StepperType'    : 'Momentum',
+    'Name'    : 'Momentum',
     'LearningRate'   : 0.01,
     ...
 }
@@ -127,7 +127,7 @@ $$
 
 AdaGrad has been shown to perform particularly well when the gradients are sparse, but the learning rate may become too small after many updates because the sum over the squares of past gradients is cumulative.
 
-The AdaGrad stepper can be chosen by specifying `AdaGrad` as the `StepperType`.
+The AdaGrad optimizer can be chosen by specifying `Name`:`AdaGrad` in pars[`Optimizer`].
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -137,9 +137,9 @@ The AdaGrad stepper can be chosen by specifying `AdaGrad` as the `StepperType`.
 
 ### Example
 ```python
-pars['Learning']={
+pars['Optimizer']={
     ...
-    'StepperType'    : 'AdaGrad',
+    'Name'    : 'AdaGrad',
     'LearningRate'   : 0.01,
     ...
 }
@@ -155,7 +155,7 @@ p^\prime_k = p_k - \frac{\eta}{\sqrt{s_k}+\epsilon} G_k(\mathbf{p})
 \end{align}
 $$
 
-The RMSProp stepper can be chosen by specifying `RMSProp` as the `StepperType`.
+The RMSProp optimizer can be chosen by specifying `Name`:`RMSProp` in pars[`Optimizer`].
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -166,9 +166,9 @@ The RMSProp stepper can be chosen by specifying `RMSProp` as the `StepperType`.
 
 ### Example
 ```python
-pars['Learning']={
+pars['Optimizer']={
     ...
-    'StepperType'    : 'RMSProp',
+    'Name'    : 'RMSProp',
     'LearningRate'   : 0.01,
     ...
 }
@@ -187,7 +187,7 @@ p^\prime_k &= p_k + \Delta p_k\\
 \end{align}
 $$
 
-The AdaDelta stepper can be chosen by specifying `AdaDelta` as the `StepperType`.
+The AdaDelta optimizer can be chosen by specifying `Name`:`AdaDelta` in pars[`Optimizer`].
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -197,9 +197,9 @@ The AdaDelta stepper can be chosen by specifying `AdaDelta` as the `StepperType`
 
 ### Example
 ```python
-pars['Learning']={
+pars['Optimizer']={
     ...
-    'StepperType'    : 'AdaDelta',
+    'Name'    : 'AdaDelta',
     'Rho'   : 0.9,
     ...
 }
@@ -218,7 +218,7 @@ p^\prime_k &= p_k - \frac{\eta}{\sqrt{v^\prime_k}+\epsilon}m^\prime_k
 \end{aligned}
 $$
 
-The AMSGrad stepper can be chosen by specifying `AMSGrad` as the `StepperType`.
+The AMSGrad optimizer can be chosen by specifying `Name`:`AMSGrad` in pars[`Optimizer`].
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -230,9 +230,9 @@ The AMSGrad stepper can be chosen by specifying `AMSGrad` as the `StepperType`.
 
 ### Example
 ```python
-pars['Learning']={
+pars['Optimizer']={
     ...
-    'StepperType'    : 'AMSGrad',
+    'Name'    : 'AMSGrad',
     'LearningRate'   : 0.01,
     ...
 }
