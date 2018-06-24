@@ -13,7 +13,7 @@ p^\prime_k = p_k + \mathcal{S}_k,
 $$
 
 i.e. each component is updated with a variation $$ \mathcal{S}_k $$ depending on the current/past set of parameters, and on the cost function $$ F $$.
-Typically, but not exclusively, $$\mathcal{S}$$ contains information directly related to the gradient of $$ F $$.
+Typically, but not exclusively, $$ \mathcal{S} $$ contains information directly related to the gradient of $$ F $$.
 
 NetKet implements a series of *optimizers*, suitable for situations where the gradient of $$ F $$ (and $$ F $$ itself) is known only stochastically.
 Optimizers must be used in conjunction with one of the available learning Methods, specifying the field `Name` in the `Optimizer` section of the input (see for example [here](../stochastic_reconfiguration/)).
