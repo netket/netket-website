@@ -42,7 +42,7 @@ redirect_from: /about/index.html
 </div>
 
 <div class="row">
-  <div class="col-sm-4 col-sm-offset-1">
+  <div class="col-sm-3">
   <div class="thumbnail">
       <img src="{{ "/img/carleo.jpg" | prepend: site.baseurl }}" class="img-rounded">
 
@@ -61,7 +61,41 @@ redirect_from: /about/index.html
   </div>      
   </div>
 
-  <div class="col-sm-4 col-sm-offset-2">
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/choo.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="http://www.physik.uzh.ch/en/groups/neupert/team/choo.html">
+        <h2 class="text-center">Kenny Jing Hui Choo</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:kchoo@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>      
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/davis.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="https://sites.stanford.edu/sslab/people">
+        <h2 class="text-center">Emily Jane Davis</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:edavis@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>            
+  </div>
+
+  <div class="col-sm-3">
   <div class="thumbnail">
     <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
     <div class="caption">
@@ -77,8 +111,8 @@ redirect_from: /about/index.html
     </div>
   </div>        
   </div>
-</div>
 
+</div>
 
 
 <br>
