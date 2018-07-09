@@ -88,7 +88,7 @@ The code snippet defining the learning methods is:
 pars['Learning']={
     'Method'         : 'Sr',
     'Nsamples'       : 1.0e3,
-    'NiterOpt'       : 500,
+    'NiterOpt'       : 300,
     'Diagshift'      : 0.1,
     'UseIterative'   : False,
     'OutputFile'     : "test",

@@ -45,8 +45,10 @@ More information about Optimizers is found [here](../optimizers).
 | `Method` | `Sr` or `Gd` |  The chosen method to learn the parameters of the wave-function  | `Sr` |
 | `NiterOpt` | Integer |  Number of optimization steps (*epochs* in the Machine Learning parlance)  | None |
 | `Nsamples` | Integer | Number of Markov Chain Monte Carlo sweeps to be performed at each step of the optimization | None |
+| `DiscardedSamples`| Integer | Number of sweeps to be discarded at the beginning of the sampling, at each step of the optimization | 10% of sweeps/CPU core |
+| `DiscardedSamplesOnInit`| Integer | Number of sweeps to be discarded in the first step of optimization, at the beginning of the sampling | 0 |
 | `OutputFile` | String | The prefix for the output files (the output is then stored in prefix.log, the wave-function saved in prefix.wf) | None |
-| `SaveEvery` | Integer | The wave function is saved every `SaveEvery` optimization steps  | 100 |
+| `SaveEvery` | Integer | The wave function is saved every `SaveEvery` optimization steps  | 50 |
 |===
 
 <h2 class="bg-primary">Gradient Descent</h2>
