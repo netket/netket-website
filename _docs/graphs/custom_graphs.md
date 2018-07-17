@@ -17,7 +17,7 @@ The edges list $$ E(i) $$ contains instead the list of graph bonds. In the previ
 | `AdjacencyList` | Matrix of Integers  |  The adjacency list of the custom graph | None |
 | `Automorphisms` | Matrix of Integers | The automorphisms of the graph | Identity Automorphism |
 | `Edges` | Matrix of Integers  |  The adjacency list of the custom graph | None |
-| `EdgeColors` | Map of integer pair to integers | The coloring of each edge of the custom graph | None |
+| `EdgeColors` | Map of integer pair to integers | The coloring of each edge of the custom graph | 0  $$ \forall E(i) $$ |
 | `IsBipartite`   | Boolean | Whether the graph is bipartite | False |
 |===
 
@@ -66,12 +66,12 @@ If users want to specify the color of the edges they should create the graph by 
 ### Example
 ```python
 # Define custom graph
-G = nx.DiGraph()
+G = nx.Graph()
 for i in range(L):
     G.add_edge(i, (i + 1) % L, color=1)
     G.add_edge(i, (i + 2) % L, color=2)
 
-edge_colors = [G[u][v]['color'] for u, v in G.edges]
+edge_colors = [[u, v, G[u][v]['color']] for u, v in G.edges]
 
 # Specify custom graph
 pars['Graph'] = {

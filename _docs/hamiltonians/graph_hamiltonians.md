@@ -37,15 +37,20 @@ Users must specify all three parameters below. If necessary, they may be set to 
 |---
 | Parameter | Possible values | Description | Default value |
 |-|-|-|-
-| `SiteOps` | List of floating/complex matrices | The unique operators that act on each site | None |
-| `BondOps` | List of floating/complex matrices | The unique operators acting on bonds | None |
-| `BondOpColors` | List of integers | Each color corresponds to an operator in BondOps | None |
+| `SiteOps` | List of floating/complex matrices | The unique operators that act on each site | Empty List |
+| `BondOps` | List of floating/complex matrices | The unique operators acting on bonds | Empty List |
+| `BondOpColors` | List of __integers__ | Integer color tags corresponding to operators in BondOps. | 0 $$ \forall $$ BondOps(i)  |
 |===
+
+<div markdown="span" class="alert alert-info" role="alert"> <b>Note: You must specify `SiteOps`, `BondOps`, *or* both.</b> {{include.content}}</div>
+
+<div markdown="span" class="alert alert-info" role="alert"> <b>Note: If you don't specify `EdgeColors`, they will be initialized with the color 0.</b> {{include.content}}</div>
+
 
 ### Example
 ```python
 
-from __future__ import print_function
+rom __future__ import print_function
 import json
 import numpy as np
 import networkx as nx
@@ -63,7 +68,7 @@ L = 20
 
 pars = {}
 
-# Define bond operators and associated colors
+# Define bond operators, labels, and couplings
 bond_operator = [
     (J[0] * mszsz).tolist(),
     (J[1] * mszsz).tolist(),
@@ -74,12 +79,12 @@ bond_operator = [
 bond_color = [1, 2, 1, 2]
 
 # Define custom graph
-G = nx.DiGraph()
+G = nx.Graph()
 for i in range(L):
     G.add_edge(i, (i + 1) % L, color=1)
     G.add_edge(i, (i + 2) % L, color=2)
 
-edge_colors = [G[u][v]['color'] for u, v in G.edges]
+edge_colors = [[u, v, G[u][v]['color']] for u, v in G.edges]
 
 # Specify custom graph
 pars['Graph'] = {
@@ -95,11 +100,41 @@ pars['Hilbert'] = {
     'Nspins': L,
 }
 
-#defining our graph hamiltonian
+#defining our custom hamiltonian
 pars['Hamiltonian'] = {
     'Name': 'Graph',
-    'SiteOps': [],
     'BondOps': bond_operator,
     'BondOpColors': bond_color,
+}
+
+#defining the wave function
+pars['Machine'] = {
+    'Name': 'RbmSpin',
+    'Alpha': 1,
+}
+
+#defining the sampler
+#here we use Hamiltonian sampling to preserve simmetries
+pars['Sampler'] = {
+    'Name': 'MetropolisHamiltonianPt',
+    'Nreplicas': 16,
+}
+
+# defining the Optimizer
+# here we use the Stochastic Gradient Descent
+pars['Optimizer'] = {
+    'Name': 'Sgd',
+    'LearningRate': 0.01,
+}
+
+# defining the learning method
+# here we use the Stochastic Reconfiguration Method
+pars['Learning'] = {
+    'Method': 'Sr',
+    'Nsamples': 1.0e3,
+    'NiterOpt': 10000,
+    'Diagshift': 0.1,
+    'UseIterative': True,
+    'OutputFile': "test",
 }
 ```
