@@ -6,6 +6,7 @@
 - title: Hamiltonians
   docs:
   - hardcoded_hamiltonians
+  - graph_hamiltonians
   - custom_hamiltonians
 
 - title: Learning
