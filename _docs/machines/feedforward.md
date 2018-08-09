@@ -16,10 +16,10 @@ where $$ \boldsymbol{W}_{n} $$ are called the weights and $$ \boldsymbol{b}_{n} 
 We would like this network to represent a scalar wavefunction $$ \Psi(\boldsymbol{\sigma}) $$, where $$ \boldsymbol{\sigma} $$ represents a system configuration, e.g. $$ \uparrow\downarrow\downarrow \dots $$ for a spin-half system. Therefore, the output layer should have only 1 output node. such that for a network consisting of $$ n $$ layers, we have
 
 $$
-\boldsymbol{\sigma} = \boldsymbol{v}_{0} \rightarrow \boldsymbol{v}_{1} \rightarrow \dots \rightarrow v_{n} = \Psi(\boldsymbol{\sigma})
+\boldsymbol{\sigma} = \boldsymbol{v}_{0} \rightarrow \boldsymbol{v}_{1} \rightarrow \dots \rightarrow \boldsymbol{v}_{n} = \Psi(\boldsymbol{\sigma})
 $$
 
-There are other variations regarding the transformation applied at each layer but the basic idea remains the same, for instance convolutional layers where there is some element of parameter sharing among the elements of the weight matrix $$ \boldsymbol{W}_{n} $$. However, at the moment the only available layer is the fully connected one.
+There are other variations regarding the transformation applied at each layer but the basic idea remains the same, for instance convolutional layers where there is some element of parameter sharing among the elements of the weight matrix $$ \boldsymbol{W}_{n} $$. Currently, there are fully connected layers and convolutional layers.
 
 <h2 class="bg-primary">FFNN</h2>
 To use the feedforward neural network (FFNN) one must specify a list of layers one wants to use.
@@ -44,7 +44,14 @@ pars['Machine']={
 
 The above example constructs a feedforward neural network comprising of three fully connected layers, with the following node structure: $$ 20 \rightarrow 20 \rightarrow 10 \rightarrow 1 $$. The third layer is a fully connected layer with identity activation function. This layer is added automatically so that the number of output nodes is one.
 
-<h3 class="bg-primary">FullyConnected Layer</h3>
+<h3 class="bg-primary">FullyConnected</h3>
+This layer executes the operation
+
+$$
+\boldsymbol{v}_n \rightarrow \boldsymbol{v}_{n+1} = g_{n}(\boldsymbol{W}_{n}\boldsymbol{v}_{n} + \boldsymbol{b}_{n}  )
+$$
+
+where $$\boldsymbol{W}_{n}$$ is a complex dense matrix and $$ g_{n} $$ is the activation function of choice.
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -54,6 +61,47 @@ The above example constructs a feedforward neural network comprising of three fu
 | `Activation` | String |  Choice of Activation function | None |
 | `UseBias` | Boolean |  Whether to use the bias $$ \boldsymbol{b}_n $$ | True |
 |===
+
+### Example
+```python
+pars['Machine']['Layers']=[{'Name':'FullyConnected','Inputs': 20,'Outputs':20,'Activation':'Lncosh'}]
+```
+
+<h3 class="bg-primary">Convolutional</h3>
+In this code we implement a version of the convolutional that can be generalised to arbitrary periodic lattices. In particular we consider that the convolutional kernels acts on sites within a certain Manhattan distance.
+
+|---
+| Parameter | Possible values | Description | Default value |
+|-|-|-|-
+| `InputChannels` | Integer | Number of input channels to the layer | None |
+| `OutputChannels` | Integer | Number of output channels to the layer| None |
+| `Distance` | Integer | Size of the convolutional kernel | None |
+| `Activation` | String |  Choice of Activation function | None |
+| `UseBias` | Boolean |  Whether to use the bias $$ \boldsymbol{b}_n $$ | True |
+|===
+
+### Example
+```python
+pars['Machine']['Layers']=[{'Name':'Convolutional','InputChannels': 2,'OutputChannels':4,'Distance': 2,'Activation':'Lncosh'}]
+```
+
+<h3 class="bg-primary">Sum</h3>
+This layer sums all the inputs into the layer and returns a single output, i.e.
+
+$$
+\boldsymbol{v}_n \rightarrow \boldsymbol{v}_{n+1} =  \sum_{i} \boldsymbol{v}_{n,i}  
+$$
+
+|---
+| Parameter | Possible values | Description | Default value |
+|-|-|-|-
+| `Inputs` | Integer | Number of inputs to the layer | None |
+|===
+
+### Example
+```python
+pars['Machine']['Layers']=[{'Name':'Sum','Inputs': 20}]
+```
 
 ## References
 ---------------
