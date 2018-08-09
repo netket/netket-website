@@ -70,6 +70,14 @@ pars['Machine']['Layers']=[{'Name':'FullyConnected','Inputs': 20,'Outputs':20,'A
 <h3 class="bg-primary">Convolutional</h3>
 In this code we implement a version of the convolutional that can be generalised to arbitrary periodic lattices. In particular we consider that the convolutional kernels acts on sites within a certain Manhattan distance.
 
+Consider a convolutional layer which takes $$\alpha$$ input channels and returns $$\beta$$ output channels. Let the $$\boldsymbol{K}_{ij} $$ represent the kernel corresponding to input channel $$i$$ and output channel $$j$$. The input vector $$\boldsymbol{v}_{n}$$ is interpreted as a one-hot representation of a set of images $$\boldsymbol{w}_{n,i}$$, where $$i$$ labels the corresponding input channel. Similarly, $$\boldsymbol{w}_{n+1,j}$$ gives the output images which is then represented as the one-hot vector $$\boldsymbol{v}_{n+1}$$. The convolution operation is then defined by
+
+$$
+\boldsymbol{w}_{n+1,j} = g_{n}(\sum^{\alpha}_{i=1} \boldsymbol{K}_{ij}\ast\boldsymbol{w}_{n,i} + b_{j})
+$$
+
+where $$\ast$$ represents the convolution operation with unit stride, $$b_{j}$$ is the bias for the output channel and $$g_{n}$$ is the activation function of choice.
+
 |---
 | Parameter | Possible values | Description | Default value |
 |-|-|-|-
@@ -102,6 +110,18 @@ $$
 ```python
 pars['Machine']['Layers']=[{'Name':'Sum','Inputs': 20}]
 ```
+
+<h3 class="bg-primary">Activation Functions</h3>
+The list of available activation functions are:
+
+|---
+| Name| Function, $$g(x) =$$|
+|-|-|-|-
+| `Tanh` | tanh($$x$$) |
+| `Lncosh` | ln(cosh($$x$$)) |
+| `Identity` | $$x$$ |
+|===
+
 
 ## References
 ---------------
