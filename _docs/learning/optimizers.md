@@ -19,6 +19,28 @@ NetKet implements a series of *optimizers*, suitable for situations where the gr
 Optimizers are used in conjunction with one of the available learning Methods,
 specifying the field `Name` in the `Optimizer` section of the input (see for example [here](../stochastic_reconfiguration/)).
 
+<h2 class="bg-primary">Common Parameters: Gradient Clipping</h2>
+
+Gradient clipping can be used with all the optimisers. We implement two methods to clip gradients: `ClipNorm` and `ClipVal`. The clipping would only be used if the parameters are specified, otherwise no clipping would be performed.
+
+`ClipNorm` clips the variation $$\mathcal{S}_k$$ based on the L2 norm, i.e. if $$\|\mathcal{S}_k\|$$ is greater than a certain threshold $$N$$, we rescale the variation by
+
+$$
+\mathcal{S}_k \rightarrow \frac{N}{\|\mathcal{S}_k\|}\mathcal{S}_k
+$$
+
+`ClipVal` clips the gradient based on the absolute value of the elements of the variation $$\mathcal{S}_k$$, i.e. if the element $$\|\mathcal{S}_{k,i}\|$$ is greater than a certain threshold $$N$$, we rescale the it by
+
+$$
+\mathcal{S}_{k,i} \rightarrow \frac{N}{\|\mathcal{S}_{k,i}\|}\mathcal{S}_{k,i}
+$$
+
+|---
+| Parameter | Possible values | Description | Default value |
+|-|-|-|-
+| `ClipNorm` | Float > 0  |  Threshold for L2 norm of the variation | None |
+| `ClipVal` | Float > 0 |  Threshold for each element of the variation  | None |
+|===
 
 <h2 class="bg-primary">Stochastic Gradient Descent</h2>
 
