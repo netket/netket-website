@@ -21,7 +21,7 @@ specifying the field `Name` in the `Optimizer` section of the input (see for exa
 
 <h2 class="bg-primary">Common Parameters: Gradient Clipping</h2>
 
-Gradient clipping can be used with all the optimisers. We implement two methods to clip gradients: `ClipNorm` and `ClipVal`. The clipping would only be used if the parameters are specified, otherwise no clipping would be performed.
+Gradient clipping can be used with all the optimisers. We implement two methods to clip gradients: `ClipNorm` and `ClipVal`. The clipping would only be used if the parameters are specified, otherwise no clipping would be performed. They can be used independently or together.
 
 `ClipNorm` clips the variation $$\mathcal{S}_k$$ based on the L2 norm, i.e. if $$\|\mathcal{S}_k\|$$ is greater than a certain threshold $$N$$, we rescale the variation by
 
