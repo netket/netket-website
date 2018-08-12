@@ -15,9 +15,9 @@ $$
 of the quantum numbers $$ s_1 \dots s_N $$ that define the many-body
 quantum system, and depending on a set of parameters $$ \mathbf{p} \equiv p_1 \dots p_M $$.
 
-NetKet ships with several state-of-the-art implementations of [Restricted Boltzmann Machines]({{ site.baseurl }}{% link _docs/machines/rbm.md %}).
+NetKet ships with several state-of-the-art implementations of [Restricted Boltzmann Machines]({{ site.baseurl }}{% link _docs/machines/rbm.md %}), [Feedforward Neural Networks]({{ site.baseurl }}{% link _docs/machines/feedforward.md %}), Jastrow factors, and more. 
 Custom machines can be also provided by the user, following the steps described [here]({{ site.baseurl }}{% link _docs/machines/custom_machines.md %}).
-Future versions of NetKet will provide users with a larger choice of built-in machines.
+Future versions of NetKet will provide an even larger choice of built-in machines.
 See also our [Challenges]({{ "/challenges/home/" | prepend: site.baseurl }}), if you would like to contribute to the developments in these directions.
 
 

@@ -1,5 +1,5 @@
 ---
-title: Introduction 
+title: Introduction
 permalink: /docs/sampling_introduction/
 ---
 
@@ -19,7 +19,7 @@ $$
 T( \mathbf{s} \rightarrow \mathbf{s}^\prime) .
 $$
 
-The [local samplers](../metropolis_local/) implemented in NetKet propose to modify only a limited set of quantum numbers at the time. [Hamiltonian sampler](../metropolis_hamiltonian/) instead use the off-diagonal elements of the Hamiltonian to construct the transition matrix.  
+The [local samplers](../metropolis_local/) implemented in NetKet propose to modify only a limited set of quantum numbers at the time. [Hamiltonian sampler](../metropolis_hamiltonian/) instead use the off-diagonal elements of the Hamiltonian to construct the transition matrix. For more customized applications, arbitrary sampling strategies based on set of local operators can also be defined in NetKet. This is achieved specifying a set of local stochastic transition operators, as explained in [Custom samplers](../custom_sampling/). 
 
 Most samplers can also be used with [parallel-tempering](https://en.wikipedia.org/wiki/Parallel_tempering) moves. In this case, one effectively samples from the a set of probability distributions
 

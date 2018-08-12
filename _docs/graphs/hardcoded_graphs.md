@@ -19,6 +19,7 @@ conditions can also be imposed.
 | `Dimension` | Integer  |  The dimensionality of the Hypercube $$ d $$ | None |
 | `L` | Integer |  The side of the Hypercube $$ L $$ | None |
 | `Pbc` | Boolean |  Whether to use periodic boundary conditions | True |
+| `EdgeColors` | Map of integer pair to integers | The coloring of each edge of the graph | 0  $$ \forall E(i) $$ |
 |===
 
 ### Example

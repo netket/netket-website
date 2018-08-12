@@ -88,16 +88,20 @@ The code snippet defining the learning methods is:
 pars['Learning']={
     'Method'         : 'Sr',
     'Nsamples'       : 1.0e3,
-    'NiterOpt'       : 500,
+    'NiterOpt'       : 300,
     'Diagshift'      : 0.1,
     'UseIterative'   : False,
     'OutputFile'     : "test",
-    'StepperType'    : 'Sgd',
-    'LearningRate'   : 0.1,
 }
 ```
-Also, notice that we need to specify a stepper, which in this case is a simple Stochastic Gradient Descent (Sgd).
-More details about the steppers can be found [here]({{ site.baseurl }}{% link _docs/learning/steppers.md %}),
+Also, notice that we need to specify an optimizer. In this case we use a simple Stochastic Gradient Descent (Sgd), specifying the following section of the input:
+```python
+pars['Optimizer']={
+    'Name'           : 'Sgd',
+    'LearningRate'   : 0.1,
+]
+```
+More details about the optimizers can be found [here]({{ site.baseurl }}{% link _docs/learning/optimizers.md %}),
 whereas learning algorithms to find the ground state are discussed [here]({{ site.baseurl }}{% link _docs/learning/stochastic_reconfiguration.md %}).
 
 ## Running the simulation
@@ -125,7 +129,7 @@ if you want to run your simulation on `NP` cores (changes NP to the number of co
 At this point, the simulation will be running and log files will be generated and continuously updated.
 On a single (modern) CPU, this Tutorial should take about 2 or 3 minutes to complete.
 Running on multiple cores will reduce the running time, keeping in mind that for small quantum systems/ small number of samples,
-the benefits of parallelism are much less pronounced than for larger-scale simulations. 
+the benefits of parallelism are much less pronounced than for larger-scale simulations.
 
 ## Output files
 

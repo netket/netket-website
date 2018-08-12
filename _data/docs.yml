@@ -6,18 +6,20 @@
 - title: Hamiltonians
   docs:
   - hardcoded_hamiltonians
+  - graph_hamiltonians
   - custom_hamiltonians
 
 - title: Learning
   docs:
   - learning_introduction
-  - steppers
+  - optimizers
   - stochastic_reconfiguration
 
 - title: Machines
   docs:
   - machines_introduction
   - rbm
+  - feedforward
   - custom_machines
 
 - title: Observables
@@ -29,3 +31,4 @@
   - sampling_introduction
   - metropolis_local
   - metropolis_hamiltonian
+  - custom_sampling

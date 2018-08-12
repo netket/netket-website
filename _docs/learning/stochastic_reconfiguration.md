@@ -23,7 +23,7 @@ p^\prime_k = p_k + \mathcal{S}_k(\Delta),
 
 $$
 
-where $$ \mathcal{S}_k(\Delta) $$ is the parameter update given by one of the chosen Steppers.
+where $$ \mathcal{S}_k(\Delta) $$ is the parameter update given by one of the chosen Optimizers.
 
 <h2 class="bg-primary">Common Parameters</h2>
 
@@ -36,7 +36,8 @@ $$
 P(\mathbf{s}) = |\Psi(\mathbf{s}) | ^2.
 $$
 
-The user must also specify a `StepperType`, which ultimately yields the parameters updates in combination with the information given by `Method` through the vector $$ \Delta_k $$ as defined above.
+The user must also specify a suitable `Optimizer`, which ultimately yields the parameters updates in combination with the information given by `Method` through the vector $$ \Delta_k $$ as defined above.
+More information about Optimizers is found [here](../optimizers).
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -44,9 +45,10 @@ The user must also specify a `StepperType`, which ultimately yields the paramete
 | `Method` | `Sr` or `Gd` |  The chosen method to learn the parameters of the wave-function  | `Sr` |
 | `NiterOpt` | Integer |  Number of optimization steps (*epochs* in the Machine Learning parlance)  | None |
 | `Nsamples` | Integer | Number of Markov Chain Monte Carlo sweeps to be performed at each step of the optimization | None |
+| `DiscardedSamples`| Integer | Number of sweeps to be discarded at the beginning of the sampling, at each step of the optimization | 10% of sweeps/CPU core |
+| `DiscardedSamplesOnInit`| Integer | Number of sweeps to be discarded in the first step of optimization, at the beginning of the sampling | 0 |
 | `OutputFile` | String | The prefix for the output files (the output is then stored in prefix.log, the wave-function saved in prefix.wf) | None |
-| `SaveEvery` | Integer | The wave function is saved every `SaveEvery` optimization steps  | 100 |
-| `StepperType` | One of the [Steppers](../steppers/)| *Stepper* updates the parameters using the gradient information provided by *Method* | None |
+| `SaveEvery` | Integer | The wave function is saved every `SaveEvery` optimization steps  | 50 |
 |===
 
 <h2 class="bg-primary">Gradient Descent</h2>
@@ -87,7 +89,9 @@ pars['Learning']={
     'Nsamples'       : 1.0e3,
     'NiterOpt'       : 1000,
     'OutputFile'     : "test",
-    'StepperType'    : 'AdaMax',
+}
+pars['Optimizer']={
+    'Name'           : 'AdaMax',
 }
 ```
 
@@ -136,7 +140,10 @@ pars['Learning']={
     'Diagshift'      : 0.1,
     'UseIterative'   : False,
     'OutputFile'     : "test",
-    'StepperType'    : 'Sgd',
+}
+
+pars['Optimizer']={
+    'Name'           : 'Sgd',
     'LearningRate'   : 0.1,
 }
 ```
