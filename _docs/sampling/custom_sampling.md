@@ -16,7 +16,12 @@ The operators $$ M_i $$ are specified giving their matrix elements, and a list o
 The transition probability associated to a custom sampler can be decomposed into two steps:
 
 1. One of the move operators $$ M_i $$ is chosen with a weight given by the user (or uniform probability by default). If the weights are provided, they do not need to sum to unity.
-2. Starting from state $$ |n\rangle $$, the probability to transition to state $$ |m\rangle $$ is given by $$ \langle n | M_i | m \rangle $$.
+
+2. Starting from state
+$$ |n \rangle $$, the probability to transition to state
+$$ |m\rangle $$ is given by
+$$ \langle n|  M_i | m \rangle $$.
+
 
 |---
 | Parameter | Possible values | Description | Default value |
@@ -55,11 +60,11 @@ for i in range(L):
 
 # now we define the custom sampler accordingly
 pars['Sampler'] = {
-'MoveOperators' : operators,
-'ActingOn' : sites,
-'MoveWeights' : weights,
-# parallel tempering is also possible with custom sampler (uncomment the following line)
-#'Nreplicas' : 12,
+       'MoveOperators' : operators,
+       'ActingOn' : sites,
+       'MoveWeights' : weights,
+        # parallel tempering is also possible with custom sampler (uncomment the following line)
+        #'Nreplicas' : 12,
 }
 ```
 

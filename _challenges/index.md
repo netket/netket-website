@@ -22,14 +22,14 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_1</i></h1>
             <h3 class="text-center">Convolutional</h3>
-            <p class="text-center">Status: <font color="orange">Assigned</font></p>
+            <p class="text-center">Status: <font color="red">Completed</font></p>
             <p markdown="span" class="text-justify">Add complex-valued [convolutional neural networks](https://en.wikipedia.org/wiki/Convolutional_neural_network) as a built-in [Machine]({{ "/docs/machines_introduction" | prepend: site.baseurl }}).
             </p>
         </div>
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_2</i></h1>
             <h3 class="text-center">Feed-Forward</h3>
-            <p class="text-center">Status: <font color="orange">Assigned</font></p>
+            <p class="text-center">Status: <font color="red">Completed</font></p>
             <p markdown="span" class="text-justify"> Add complex-valued [feed-forward neural networks](https://en.wikipedia.org/wiki/Feedforward_neural_network) as a built-in [Machine]({{ "/docs/machines_introduction" | prepend: site.baseurl }}).</p>
         </div>
         <div class="col-sm-4">
@@ -73,7 +73,7 @@ redirect_from: /challenges/index.html
         <div class="col-sm-4">
             <h1 class="text-center"><i class="material-icons" style="font-size:48px;">filter_8</i></h1>
             <h3 class="text-center">Optimizers</h3>
-            <p class="text-center">Status: <font color="orange">Assigned</font></p>
+            <p class="text-center">Status: <font color="red">Completed</font></p>
             <p markdown="span" class="text-justify"> Extend the current choice of [optimizers]({{ "/docs/optimizers" | prepend: site.baseurl }}), for example taking inspiration from the excellent selection available in [TensorFlow](https://www.tensorflow.org/api_guides/python/train#Optimizers).  </p>
         </div>
         <div class="col-sm-4">

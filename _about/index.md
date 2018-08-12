@@ -48,7 +48,7 @@ redirect_from: /about/index.html
 
       <div class="caption">
         <a href="https://www.simonsfoundation.org/team/giuseppe-carleo/">
-        <h2 class="text-center">Giuseppe Carleo</h2>
+        <h2 class="text-center">Giuseppe <br/> Carleo</h2>
         </a>
         <div class="text-muted"><p class="text-center">Developer Lead &amp; Founder</p></div>
 
@@ -67,9 +67,9 @@ redirect_from: /about/index.html
 
       <div class="caption">
         <a href="http://www.physik.uzh.ch/en/groups/neupert/team/choo.html">
-        <h2 class="text-center">Kenny Jing Hui Choo</h2>
+        <h2 class="text-center">Kenny <br /> Choo</h2>
         </a>
-        <div class="text-muted"><p class="text-center">Contributor</p></div>
+        <div class="text-muted"><p class="text-center">Senior Contributor</p></div>
 
       <p class="text-center">   
       <a href="mailto:kchoo@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
@@ -78,13 +78,31 @@ redirect_from: /about/index.html
   </div>      
   </div>
 
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/dhofmann.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="https://lab.sentef.org/damian-hofmann/">
+        <h2 class="text-center">Damian <br /> Hofmann</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:dhofmann@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>            
+  </div>
+
   <div class="col-sm-3">
   <div class="thumbnail">
       <img src="{{ "/img/davis.jpg" | prepend: site.baseurl }}" class="img-rounded">
 
       <div class="caption">
         <a href="https://sites.stanford.edu/sslab/people">
-        <h2 class="text-center">Emily Jane Davis</h2>
+        <h2 class="text-center">Emily <br/> Davis</h2>
         </a>
         <div class="text-muted"><p class="text-center">Contributor</p></div>
 
@@ -95,12 +113,67 @@ redirect_from: /about/index.html
   </div>            
   </div>
 
+
+
+</div>
+<div class="row">
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/alet.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="http://www.lpt.ups-tlse.fr/spip.php?article20&lang=fr">
+        <h2 class="text-center">Fabien <br /> Alet</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:falet@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>      
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/theveniaut.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="http://www.fondation-cfm.fr/etudiant/hugo-theveniaut/">
+        <h2 class="text-center">Hugo Theveniaut</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:htheveniaut@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>      
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/jsmith.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="https://www.colorado.edu/lab/sharmagroup/james-smith">
+        <h2 class="text-center">James <br/> Smith</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:jsmith@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>            
+  </div>
+
   <div class="col-sm-3">
   <div class="thumbnail">
     <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
     <div class="caption">
       <a href="{{ "/challenges/home" | prepend: site.baseurl }}">
-      <h2 class="text-center">Join us now!</h2>
+      <h2 class="text-center">Join the NetKet team now!</h2>
       </a>
       <div class="text-muted"><p class="text-center">Get Involved</p></div>
       <p class="text-center">   
