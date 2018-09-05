@@ -19,7 +19,7 @@ redirect_from: /about/index.html
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-    <img src="{{site.baseurl}}/img/logo_simple.jpg" style="height: 360px" class="center-block">
+    <img src="{{site.baseurl}}/img/logo_simple.jpg" style="height: 70%; width: 50%; min-width: 300px;" class="center-block">
     </div>
   </div>
 
@@ -32,8 +32,7 @@ redirect_from: /about/index.html
 <br>
 <br>
 <br>
-<br>
-<br>
+
 
 <div class="row">
 <div class="col-sm-6 col-sm-offset-3 ">
@@ -170,29 +169,50 @@ redirect_from: /about/index.html
 
   <div class="col-sm-3">
   <div class="thumbnail">
-    <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
-    <div class="caption">
-      <a href="{{ "/challenges/home" | prepend: site.baseurl }}">
-      <h2 class="text-center">Join the NetKet team now!</h2>
-      </a>
-      <div class="text-muted"><p class="text-center">Get Involved</p></div>
-      <p class="text-center">   
-      <a href="https://twitter.com/NetKetOrg"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+      <img src="{{ "/img/mazzola.jpg" | prepend: site.baseurl }}" class="img-rounded">
 
-      <a href="mailto:netket@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      <div class="caption">
+        <a href="http://www.comp.phys.ethz.ch/people/person-detail.html?persid=213386">
+        <h2 class="text-center">Guglielmo <br/> Mazzola</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:gmazzola@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
       </p>
-    </div>
-  </div>        
+      </div>
+  </div>            
   </div>
 
 </div>
 
+<div class="row">
+
+<div class="col-sm-3">
+<div class="thumbnail">
+  <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
+  <div class="caption">
+    <a href="{{ "/challenges/home" | prepend: site.baseurl }}">
+    <h2 class="text-center">Join the NetKet team now!</h2>
+    </a>
+    <div class="text-muted"><p class="text-center">Get Involved</p></div>
+    <p class="text-center">   
+    <a href="https://twitter.com/NetKetOrg"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+
+    <a href="mailto:netket@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    </p>
+  </div>
+</div>        
+</div>
+
+</div>
+
+</div>
 
 <br>
 <br>
 <br>
-<br>
-<br>
+
 
 <div class="row">
 <h1 class="text-center">Sponsors</h1>
