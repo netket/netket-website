@@ -21,6 +21,7 @@
   - rbm
   - feedforward
   - jastrow
+  - mps_periodic
   - custom_machines
 
 - title: Observables
