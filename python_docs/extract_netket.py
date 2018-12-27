@@ -7,16 +7,11 @@ classes = inspect.getmembers(nk.graph, inspect.isclass)
 
 for cl in classes:
 
-    if(not format.format_class(cl)):
-        # skip undocumented classes
-        continue
+    # format the class header and constructor(s)
+    format.format_class(cl)
 
-    methods = inspect.getmembers(cl[1], inspect.isfunction)
-    properties = inspect.getmembers(cl[1], lambda o: isinstance(o, property))
+    # methods = inspect.getmembers(cl[1], inspect.isfunction)
 
     # methods and functions
-    for method in methods:
-        format.format_function(method)
-
-    # properties
-    format.format_properties(properties)
+    # for method in methods:
+    #     format.format_function(method)
