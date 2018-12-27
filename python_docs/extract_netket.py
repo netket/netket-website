@@ -8,7 +8,7 @@ classes = inspect.getmembers(nk.graph, inspect.isclass)
 for cl in classes:
 
     # format the class header and constructor(s)
-    format.format_class(cl)
+    print(format.format_class(cl))
 
     # methods = inspect.getmembers(cl[1], inspect.isfunction)
 

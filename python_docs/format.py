@@ -3,22 +3,23 @@ import parse as pa
 import extract as ext
 import re
 import inspect
+import io
 
 
 def format_class(cl):
-
+    f = io.StringIO("")
     docs = cl[1].__doc__
 
     # skip undocumented classes
     if(docs == None):
-        return
+        return f.getvalue()
 
     # # remove excess spaces
     docs = " ".join(docs.split())
 
     # General hig-level class docs
-    print('# ', cl[0])
-    print(docs, '\n')
+    f.write('# ' + cl[0] + '\n')
+    f.write(docs + '\n')
 
     # Docs for __init__
     docs = (cl[1].__init__).__doc__
@@ -28,17 +29,19 @@ def format_class(cl):
 
     if(isinstance(match, list)):
         for ima, ma in enumerate(match):
-            format_function(ma, 'Constructor [' + str(ima + 1) + ']')
+            f.write(format_function(ma, 'Constructor [' + str(ima + 1) + ']'))
     else:
-        format_function(match, 'Constructor')
+        f.write(format_function(match, 'Constructor'))
 
     # properties
     properties = inspect.getmembers(cl[1], lambda o: isinstance(o, property))
-    format_properties(properties)
+    f.write(format_properties(properties))
+    return f.getvalue()
 
 
 def format_function(ma, name):
-    print('## ', name)
+    f = io.StringIO("")
+    f.write('## ' + name)
     value_matrix = []
     signature = ma["signature"]
 
@@ -61,15 +64,17 @@ def format_function(ma, name):
             examples = (gd['text'])
             has_example = True
         else:
-            print(gd['text'], '\n')
+            f.write(gd['text'] + '\n')
 
     writer = pytablewriter.MarkdownTableWriter()
     writer.header_list = ["Field", "Type", "Description"]
     writer.value_matrix = value_matrix
+    writer.stream = f
     writer.write_table()
     if(has_example):
-        print('### Examples')
-        print(examples, '\n')
+        f.write('### Examples' + '\n')
+        f.write(examples + '\n')
+    return f.getvalue()
 
 
 def format_properties(properties):
@@ -86,7 +91,11 @@ def format_properties(properties):
 
         value_matrix.append([prop[0], type_name, docs])
 
+    f = io.StringIO("")
     writer.header_list = ["Property", "Type", "Description"]
     writer.value_matrix = value_matrix
-    print('## Properties')
+    writer.stream = f
+
+    f.write('## Properties' + '\n')
     writer.write_table()
+    return f.getvalue()
