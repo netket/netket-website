@@ -42,8 +42,8 @@ layout: default
        <libullet class="list-group-item" markdown="span">Find out the [requirements](../requirements/).</libullet>
        <libullet class="list-group-item" markdown="span">Find out how to [compile](../compiling/) NetKet.</libullet>
        <libullet class="list-group-item" markdown="span">Explore our [Tutorials]({{ "/tutorials/home/" | prepend: site.baseurl }}).</libullet>
-       <libullet class="list-group-item" markdown="span">Set up your custom [Graph]({{ site.baseurl }}{% link _docs/graphs/custom_graphs.md %}),[Hamiltonian]({{ site.baseurl }}{% link _docs/hamiltonians/custom_hamiltonians.md %}),
-       [Machine]({{ site.baseurl }}{% link _docs/machines/custom_machines.md %}), [Observable]({{ site.baseurl }}{% link _docs/observables/custom_observables.md %}), [Sampler]({{ site.baseurl }}{% link _docs/sampling/custom_sampling.md %}) and more.</libullet>
+       <!-- <libullet class="list-group-item" markdown="span">Set up your custom [Graph]({{ site.baseurl }}{% link _docs/graph_CustomGraph.md %}),[Hamiltonian]({{ site.baseurl }}{% link _docs/operator_LocalOperator.md %}),
+       and more.</libullet> -->
        <libullet class="list-group-item" markdown="span">Get involved, pick your own [Challenge]({{ site.baseurl }}{% link _challenges/index.md %}).</libullet>
     </ol>
   </div>

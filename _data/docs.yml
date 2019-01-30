@@ -1,35 +1,60 @@
-- title: Graphs
+- title: Graph
   docs:
-  - hardcoded_graphs
-  - custom_graphs
+  - graph_Hypercube
+  - graph_CustomGraph
 
-- title: Hamiltonians
+- title: Hilbert
   docs:
-  - hardcoded_hamiltonians
-  - graph_hamiltonians
-  - custom_hamiltonians
+  - hilbert_Spin
+  - hilbert_CustomHilbert
+  - hilbert_Boson
+  - hilbert_Qubit
+  - hilbert_HilbertIndex
 
-- title: Learning
+- title: Machine
   docs:
-  - learning_introduction
-  - optimizers
-  - stochastic_reconfiguration
+  - machine_RbmSpin
+  - machine_RbmSpinSymm
+  - machine_RbmMultiVal
+  - machine_FFNN
+  - machine_Jastrow
+  - machine_JastrowSymm
+  - machine_MPSPeriodic
+  - machine_MPSPeriodicDiagonal
 
-- title: Machines
+- title: Operator
   docs:
-  - machines_introduction
-  - rbm
-  - feedforward
-  - jastrow
-  - custom_machines
+  - operator_GraphOperator
+  - operator_LocalOperator
+  - operator_BoseHubbard
+  - operator_Heisenberg
+  - operator_Ising
+  - operator_DenseMatrixWrapper
+  - operator_DirectMatrixWrapper
+  - operator_SparseMatrixWrapper
 
-- title: Observables
+- title: Sampler
   docs:
-  - custom_observables
+  - sampler_CustomSampler
+  - sampler_CustomSamplerPt
+  - sampler_ExactSampler
+  - sampler_MetropolisExchange
+  - sampler_MetropolisExchangePt
+  - sampler_MetropolisHamiltonian
+  - sampler_MetropolisHamiltonianPt
+  - sampler_MetropolisHop
+  - sampler_MetropolisLocal
+  - sampler_MetropolisLocalPt
+  - sampler_MetropolisExchange
+  - sampler_MetropolisExchangePt
 
-- title: Sampling
+- title: Variational
   docs:
-  - sampling_introduction
-  - metropolis_local
-  - metropolis_hamiltonian
-  - custom_sampling
+  - variational_Vmc
+  - variational_VmcIterator
+
+- title: Exact
+  docs:
+  - exact_EdResult
+  - exact_ImagTimePropagation
+  - exact_ImagTimeIterator
