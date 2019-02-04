@@ -3,7 +3,9 @@ title: RbmSpin
 permalink: /docs/machine_RbmSpin/
 ---
 # RbmSpin
-A fully connected Restricted Boltzmann Machine (RBM). This type of RBM has spin 1/2 hidden units and is defined by: $$ \Psi(s_1,\dots s_N) = e^{\sum_i^N a_i s_i} \times \Pi_{j=1}^M \cosh \left(\sum_i^N W_{ij} s_i + b_j \right) $$ for arbitrary local quantum numbers $$ s_i $$.
+A fully connected Restricted Boltzmann Machine (RBM). This type of RBM has spin 1/2 hidden units and is defined by:
+$$ \Psi(s_1,\dots s_N) = e^{\sum_i^N a_i s_i} \times \Pi_{j=1}^M \cosh \left(\sum_i^N W_{ij} s_i + b_j \right) $$
+for arbitrary local quantum numbers $$ s_i $$.
 
 ## Class Constructor
 Constructs a new ``RbmSpin`` machine:
@@ -36,7 +38,7 @@ alpha = 2 for a one-dimensional L=20 spin-half system:
 
 
 
-## Class Methods 
+## Class Methods
 ### der_log
 Member function to obtain the derivatives of log value of
 machine given an input wrt the machine's parameters.
@@ -99,4 +101,3 @@ Member function to save the machine parameters.
 |n_par     |int                   | The number of parameters in the machine.                                                                         |
 |n_visible |int                   | The number of inputs into the machine aka visible units in             the case of Restricted Boltzmann Machines.|
 |parameters|list                  | List containing the parameters within the layer.             Read and write                                      |
-

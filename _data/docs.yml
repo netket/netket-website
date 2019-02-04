@@ -48,6 +48,16 @@
   - sampler_MetropolisExchange
   - sampler_MetropolisExchangePt
 
+- title: Optimizer
+  docs:
+  - optimizer_AdaDelta
+  - optimizer_AdaGrad
+  - optimizer_AdaMax
+  - optimizer_AmsGrad
+  - optimizer_Momentum
+  - optimizer_RmsProp
+  - optimizer_Sgd
+
 - title: Variational
   docs:
   - variational_Vmc
