@@ -3,7 +3,9 @@ title: MetropolisExchangePt
 permalink: /docs/sampler_MetropolisExchangePt/
 ---
 # MetropolisExchangePt
-This sampler performs parallel-tempering moves in addition to the local exchange moves implemented in `MetropolisExchange`. The number of replicas can be $$ N_{\mathrm{rep}} $$ chosen by the user.
+This sampler performs parallel-tempering moves in addition to
+ the local exchange moves implemented in `MetropolisExchange`.
+ The number of replicas can be $$ N_{\mathrm{rep}} $$ chosen by the user.
 
 ## Class Constructor
 Constructs a new ``MetropolisExchangePt`` sampler given a machine, a

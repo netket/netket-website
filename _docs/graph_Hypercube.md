@@ -3,7 +3,8 @@ title: Hypercube
 permalink: /docs/graph_Hypercube/
 ---
 # Hypercube
-A hypercube lattice of side L in d dimensions. Periodic boundary conditions can also be imposed.
+A hypercube lattice of side L in d dimensions.
+ Periodic boundary conditions can also be imposed.
 
 ## Class Constructor [1]
 Constructs a new ``Hypercube`` given its side length and dimension.

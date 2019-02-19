@@ -3,7 +3,8 @@ title: DenseMatrixWrapper
 permalink: /docs/operator_DenseMatrixWrapper/
 ---
 # DenseMatrixWrapper
-This class stores the matrix elements of a given Operator as an Eigen dense matrix.
+This class stores the matrix elements of
+ a given Operator as an Eigen dense matrix.
 
 ## Class Constructor
 Constructs a dense matrix wrapper from an operator. Matrix elements are

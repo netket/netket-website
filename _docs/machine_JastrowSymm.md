@@ -3,7 +3,13 @@ title: JastrowSymm
 permalink: /docs/machine_JastrowSymm/
 ---
 # JastrowSymm
-A Jastrow wavefunction Machine with lattice symmetries.This machine defines the wavefunction as follows: $$ \Psi(s_1,\dots s_N) = e^{\sum_{ij} s_i W_{ij} s_i}$$ where $$ W_{ij} $$ are the Jastrow parameters respects the specified symmetries of the lattice.
+A Jastrow wavefunction Machine with lattice symmetries.This machine
+ defines the wavefunction as follows:
+
+ $$ \Psi(s_1,\dots s_N) = e^{\sum_{ij} s_i W_{ij} s_i}$$
+
+ where $$ W_{ij} $$ are the Jastrow parameters respects the
+ specified symmetries of the lattice.
 
 ## Class Constructor
 Constructs a new ``JastrowSymm`` machine:

@@ -3,7 +3,12 @@ title: Jastrow
 permalink: /docs/machine_Jastrow/
 ---
 # Jastrow
-A Jastrow wavefunction Machine. This machine defines the following wavefunction: $$ \Psi(s_1,\dots s_N) = e^{\sum_{ij} s_i W_{ij} s_i}$$ where $$ W_{ij} $$ are the Jastrow parameters.
+A Jastrow wavefunction Machine. This machine defines the following
+ wavefunction:
+
+ $$ \Psi(s_1,\dots s_N) = e^{\sum_{ij} s_i W_{ij} s_i}$$
+
+ where $$ W_{ij} $$ are the Jastrow parameters.
 
 ## Class Constructor
 Constructs a new ``Jastrow`` machine:

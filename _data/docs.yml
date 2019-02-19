@@ -68,3 +68,7 @@
   - exact_EdResult
   - exact_ImagTimePropagation
   - exact_ImagTimeIterator
+
+- title: Supervised
+  docs:
+  - supervised_Supervised

@@ -3,7 +3,8 @@ title: RbmMultiVal
 permalink: /docs/machine_RbmMultiVal/
 ---
 # RbmMultiVal
-A fully connected Restricted Boltzmann Machine for handling larger local Hilbert spaces.
+A fully connected Restricted Boltzmann Machine for handling larger
+ local Hilbert spaces.
 
 ## Class Constructor
 ## Class Methods 

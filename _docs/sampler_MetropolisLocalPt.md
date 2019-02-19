@@ -3,7 +3,9 @@ title: MetropolisLocalPt
 permalink: /docs/sampler_MetropolisLocalPt/
 ---
 # MetropolisLocalPt
-This sampler performs parallel-tempering moves in addition to the local moves implemented in `MetropolisLocal`. The number of replicas can be $$ N_{\mathrm{rep}} $$ chosen by the user.
+This sampler performs parallel-tempering
+ moves in addition to the local moves implemented in `MetropolisLocal`.
+ The number of replicas can be $$ N_{\mathrm{rep}} $$ chosen by the user.
 
 ## Class Constructor
 Constructs a new ``MetropolisLocalPt`` sampler given a machine
