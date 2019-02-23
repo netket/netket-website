@@ -9,19 +9,20 @@ layout: tutorials
 {% assign kfile = 1 %}
 {% for section in site.data.docs %}
 
-{% assign rem = kfile | modulo: 3 %}
+{% assign rem = kfile | modulo: 4 %}
 
 {% if rem == 1 %}
 <div class="row ">
 {% endif %}
 
-<div class="col-sm-4">
+<div class="col-sm-3">
 <div class="panel panel-default">
   <div class="panel-heading">
     <h4>
-    {{section.title}}
+    <a data-toggle="collapse" href="#collapse_{{section.title}}">  {{section.title}}</a>
     </h4>
   </div>
+  <div id="collapse_{{section.title}}" class="panel-collapse collapse">
   <ul class="list-group">
   {% for item in section.docs %}
     {% assign item_url = item | prepend:"/docs/" | append:"/" %}
@@ -29,6 +30,7 @@ layout: tutorials
     <a class="list-group-item" href="{{ p.url  | prepend: site.baseurl }}">{{ p.title }}</a>
   {% endfor %}
   </ul>
+  </div>
 </div>
 </div>
 

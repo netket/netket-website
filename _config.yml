@@ -74,6 +74,11 @@ defaults:
     sectionid: tutorials
 
 - scope:
+    path: _tutorials/img
+  values:
+      image: true
+
+- scope:
     path: _getstarted
     type: getstarted
   values:

@@ -1,35 +1,74 @@
-- title: Graphs
+- title: Exact
   docs:
-  - hardcoded_graphs
-  - custom_graphs
+  - exact_ImagTimePropagation
+  - exact_ImagTimeIterator
 
-- title: Hamiltonians
+- title: Graph
   docs:
-  - hardcoded_hamiltonians
-  - graph_hamiltonians
-  - custom_hamiltonians
+  - graph_Hypercube
+  - graph_Lattice
+  - graph_CustomGraph
 
-- title: Learning
+- title: Hilbert
   docs:
-  - learning_introduction
-  - optimizers
-  - stochastic_reconfiguration
+  - hilbert_Spin
+  - hilbert_CustomHilbert
+  - hilbert_Boson
+  - hilbert_Qubit
+  - hilbert_HilbertIndex
 
-- title: Machines
+- title: Machine
   docs:
-  - machines_introduction
-  - rbm
-  - feedforward
-  - jastrow
-  - custom_machines
+  - machine_RbmSpin
+  - machine_RbmSpinSymm
+  - machine_RbmMultiVal
+  - machine_FFNN
+  - machine_Jastrow
+  - machine_JastrowSymm
+  - machine_MPSPeriodic
+  - machine_MPSPeriodicDiagonal
 
-- title: Observables
+- title: Operator
   docs:
-  - custom_observables
+  - operator_GraphOperator
+  - operator_LocalOperator
+  - operator_BoseHubbard
+  - operator_Heisenberg
+  - operator_Ising
+  - operator_DenseMatrixWrapper
+  - operator_DirectMatrixWrapper
+  - operator_SparseMatrixWrapper
 
-- title: Sampling
+- title: Optimizer
   docs:
-  - sampling_introduction
-  - metropolis_local
-  - metropolis_hamiltonian
-  - custom_sampling
+  - optimizer_AdaDelta
+  - optimizer_AdaGrad
+  - optimizer_AdaMax
+  - optimizer_AmsGrad
+  - optimizer_Momentum
+  - optimizer_RmsProp
+  - optimizer_Sgd
+
+- title: Sampler
+  docs:
+  - sampler_CustomSampler
+  - sampler_CustomSamplerPt
+  - sampler_ExactSampler
+  - sampler_MetropolisExchange
+  - sampler_MetropolisExchangePt
+  - sampler_MetropolisHamiltonian
+  - sampler_MetropolisHamiltonianPt
+  - sampler_MetropolisHop
+  - sampler_MetropolisLocal
+  - sampler_MetropolisLocalPt
+  - sampler_MetropolisExchange
+  - sampler_MetropolisExchangePt
+
+- title: Supervised
+  docs:
+  - supervised_Supervised
+
+- title: Variational
+  docs:
+  - variational_Vmc
+  - variational_VmcIterator
