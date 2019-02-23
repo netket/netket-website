@@ -86,7 +86,7 @@ redirect_from: /about/index.html
         <a href="https://lab.sentef.org/damian-hofmann/">
         <h2 class="text-center">Damian <br /> Hofmann</h2>
         </a>
-        <div class="text-muted"><p class="text-center">Contributor</p></div>
+        <div class="text-muted"><p class="text-center">Senior Contributor</p></div>
 
       <p class="text-center">   
       <a href="mailto:dhofmann@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
@@ -97,19 +97,19 @@ redirect_from: /about/index.html
 
   <div class="col-sm-3">
   <div class="thumbnail">
-      <img src="{{ "/img/davis.jpg" | prepend: site.baseurl }}" class="img-rounded">
+      <img src="{{ "/img/jsmith.jpg" | prepend: site.baseurl }}" class="img-rounded">
 
       <div class="caption">
-        <a href="https://sites.stanford.edu/sslab/people">
-        <h2 class="text-center">Emily <br/> Davis</h2>
+        <a href="https://www.colorado.edu/lab/sharmagroup/james-smith">
+        <h2 class="text-center">James <br/> Smith</h2>
         </a>
-        <div class="text-muted"><p class="text-center">Contributor</p></div>
+        <div class="text-muted"><p class="text-center">Senior Contributor</p></div>
 
       <p class="text-center">   
-      <a href="mailto:edavis@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      <a href="mailto:jsmith@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
       </p>
       </div>
-  </div>            
+  </div>          
   </div>
 
 
@@ -152,16 +152,16 @@ redirect_from: /about/index.html
 
   <div class="col-sm-3">
   <div class="thumbnail">
-      <img src="{{ "/img/jsmith.jpg" | prepend: site.baseurl }}" class="img-rounded">
+      <img src="{{ "/img/davis.jpg" | prepend: site.baseurl }}" class="img-rounded">
 
       <div class="caption">
-        <a href="https://www.colorado.edu/lab/sharmagroup/james-smith">
-        <h2 class="text-center">James <br/> Smith</h2>
+        <a href="https://sites.stanford.edu/sslab/people">
+        <h2 class="text-center">Emily <br/> Davis</h2>
         </a>
         <div class="text-muted"><p class="text-center">Contributor</p></div>
 
       <p class="text-center">   
-      <a href="mailto:jsmith@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      <a href="mailto:edavis@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
       </p>
       </div>
   </div>            
@@ -183,11 +183,167 @@ redirect_from: /about/index.html
       </div>
   </div>            
   </div>
-
 </div>
 
 <div class="row">
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/evert.jpg" | prepend: site.baseurl }}" class="img-rounded">
 
+      <div class="caption">
+        <a href="">
+        <h3 class="text-center">Evert <br /> van Nieuwenburg</h3>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:evert@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>      
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/alex_netket.png" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="">
+        <h2 class="text-center">Alexander <br /> Wietek</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:awietek@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>      
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/marta.png" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="">
+        <h2 class="text-center">Marta <br/> Mauri</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:mmauri@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>            
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/stavros.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="">
+        <h2 class="text-center">Stavros <br/> Eftymiou</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:stavros@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>            
+  </div>
+
+<div class="row">
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/shenghsuan.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="">
+        <h2 class="text-center">ShengHsuan <br /> Li</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:shenghsuan@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>      
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="">
+        <h2 class="text-center">Tom <br /> Westerhout</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:tom@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>      
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="">
+        <h2 class="text-center">Giacomo <br/> Torlai</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:mmauri@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>            
+  </div>
+
+  <div class="col-sm-3">
+  <div class="thumbnail">
+      <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+      <div class="caption">
+        <a href="">
+        <h2 class="text-center">Ivan <br/> Glasser</h2>
+        </a>
+        <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+      <p class="text-center">   
+      <a href="mailto:glasser@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+      </p>
+      </div>
+  </div>            
+  </div>
+
+</div>
+
+
+
+<div class="row">
+<div class="col-sm-3">
+<div class="thumbnail">
+    <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">
+
+    <div class="caption">
+      <a href="">
+      <h2 class="text-center">Christian <br/> Mendl</h2>
+      </a>
+      <div class="text-muted"><p class="text-center">Contributor</p></div>
+
+    <p class="text-center">   
+    <a href="mailto:cmendl@netket.org"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+    </p>
+    </div>
+</div>   
+</div>
 <div class="col-sm-3">
 <div class="thumbnail">
   <img src="{{ "/img/logo_rect.jpg" | prepend: site.baseurl }}" class="img-rounded">

@@ -29,7 +29,6 @@ Optimizing a 1D wavefunction with Variational Mante Carlo.
 
 ```python
 >>> import netket as nk
->>> from mpi4py import MPI
 >>> SEED = 3141592
 >>> g = nk.graph.Hypercube(length=8, n_dim=1)
 >>> hi = nk.hilbert.Spin(s=0.5, graph=g)
@@ -58,6 +57,16 @@ iteration.
 |--------|------------------------|------------------------------------|
 |ob      |netket::AbstractOperator|The operator form of the observable.|
 |ob_name |str                     |The name of the observable.         |
+
+
+### advance
+Perform one or several iteration steps of the VMC calculation. In each step,
+energy and gradient will be estimated via VMC and subsequently, the variational
+parameters will be updated according to the configured method.
+
+|Argument|Type |          Description          |
+|--------|-----|-------------------------------|
+|steps   |int=1|Number of VMC steps to perform.|
 
 
 ### get_observable_stats
@@ -92,7 +101,6 @@ Running a simple Vmc calculation.
 
 ```python
 >>> import netket as nk
->>> from mpi4py import MPI
 >>> SEED = 3141592
 >>> g = nk.graph.Hypercube(length=8, n_dim=1)
 >>> hi = nk.hilbert.Spin(s=0.5, graph=g)

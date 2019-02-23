@@ -19,7 +19,7 @@ data, including samples and targets.
 
 
 ## Class Methods 
-### iterate
+### advance
 Run one iteration of supervised learning. This should be helpful for testing and
 having self-defined control sequence in python.
 

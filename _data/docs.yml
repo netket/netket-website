@@ -1,6 +1,12 @@
+- title: Exact
+  docs:
+  - exact_ImagTimePropagation
+  - exact_ImagTimeIterator
+
 - title: Graph
   docs:
   - graph_Hypercube
+  - graph_Lattice
   - graph_CustomGraph
 
 - title: Hilbert
@@ -33,6 +39,16 @@
   - operator_DirectMatrixWrapper
   - operator_SparseMatrixWrapper
 
+- title: Optimizer
+  docs:
+  - optimizer_AdaDelta
+  - optimizer_AdaGrad
+  - optimizer_AdaMax
+  - optimizer_AmsGrad
+  - optimizer_Momentum
+  - optimizer_RmsProp
+  - optimizer_Sgd
+
 - title: Sampler
   docs:
   - sampler_CustomSampler
@@ -48,27 +64,11 @@
   - sampler_MetropolisExchange
   - sampler_MetropolisExchangePt
 
-- title: Optimizer
+- title: Supervised
   docs:
-  - optimizer_AdaDelta
-  - optimizer_AdaGrad
-  - optimizer_AdaMax
-  - optimizer_AmsGrad
-  - optimizer_Momentum
-  - optimizer_RmsProp
-  - optimizer_Sgd
+  - supervised_Supervised
 
 - title: Variational
   docs:
   - variational_Vmc
   - variational_VmcIterator
-
-- title: Exact
-  docs:
-  - exact_EdResult
-  - exact_ImagTimePropagation
-  - exact_ImagTimeIterator
-
-- title: Supervised
-  docs:
-  - supervised_Supervised
