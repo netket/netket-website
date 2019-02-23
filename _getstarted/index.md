@@ -33,8 +33,9 @@ layout: default
 <div class="row" >
 <div class="col-sm-8 col-sm-offset-2">
 <div class="alert alert-info">
-  <h3 class="text-center">Further Notes</h3>
-  <h5 class="text-center" markdown="span"> We do not support `conda install` yet</h5>
+  <h3 class="text-center">Remarks</h3>
+  <h5 class="text-center" markdown="span"> We are not yet supporting Conda installs</h5>
+  <h5 class="text-center" markdown="span">Windows Os is not supported</h5>
 </div>
 </div>
 </div>

@@ -13,11 +13,11 @@ $$ H = \sum_{i=1}^{L} J_{1}\hat{S}_{i} \cdot \hat{S}_{i+1} + J_{2} \hat{S}_{i} \
 where the sum is over sites of the 1-D chain.
 
 ## Outline:
-  1. Obtain data from ED
-  2. Choosing the machine (variational ansatz) and the optimizer
-  3. Defining the Supervised Learning object
-  4. Running the Supervised Learning
-  5. Data Visualisation
+    1. Obtain data from ED
+    2. Choosing the machine (variational ansatz) and the optimizer
+    3. Defining the Supervised Learning object
+    4. Running the Supervised Learning
+    5. Data Visualisation
 
 
 ```python
@@ -126,7 +126,7 @@ op = nk.optimizer.AdaDelta()
 
 ## 3) Defining the Supervised Learning object
 
-We have now have almost everything (machine, optimizer, data) for setting up a supervised learning object. We also need to provide the batch size, ``batch_size``, for stochatic gradient descent. For detail, see https://en.wikipedia.org/wiki/Stochastic_gradient_descent
+We have now have almost everything (machine, optimizer, data) for setting up a supervised learning object. We also need to provide the batch size, ``batch_size``, for stochatic gradient descent. For more details, [see here](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
 
 
 
