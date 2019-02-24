@@ -193,7 +193,7 @@ redirect_from: /about/index.html
 
       <div class="caption">
         <a href="">
-        <h2 class="text-center">ShengHsuan <br /> Li</h2>
+        <h2 class="text-center">ShengHsuan <br /> Lin</h2>
         </a>
         <div class="text-muted"><p class="text-center">Contributor</p></div>
 
