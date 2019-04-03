@@ -14,6 +14,7 @@ redirect_from: /about/index.html
     </div>
     <br>
     <p class="text-center"><a class="btn btn-info btn-lg" href="https://twitter.com/NetKetOrg" role="button">Follow us on Twitter</a></p>
+    <p class="text-center"><a class="btn btn-warning btn-lg" href="{{ "/cite/home/" | prepend: site.baseurl }}" role="button">How to cite our work</a></p>
 </div>
 
 <div class="container">
