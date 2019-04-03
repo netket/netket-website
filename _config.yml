@@ -58,6 +58,13 @@ defaults:
     sectionid: about
 
 - scope:
+    path: _cite
+    type: cite
+  values:
+    layout: cite
+    sectionid: cite
+
+- scope:
     path: _docs
     type: docs
   values:
@@ -99,6 +106,10 @@ collections:
     output: true
 
   tutorials:
+    permalink: /:collection/:path/
+    output: true
+
+  cite:
     permalink: /:collection/:path/
     output: true
 
