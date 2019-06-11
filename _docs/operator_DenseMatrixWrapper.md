@@ -14,7 +14,6 @@ stored as a dense Eigen matrix.
 |--------|---------------|------------------------------------------|
 |operator|netket.Operator|The operator used to construct the matrix.|
 
-
 ### Examples
 Printing the dimension of a dense matrix wrapper.
 
@@ -34,10 +33,11 @@ Printing the dimension of a dense matrix wrapper.
 
 ## Class Methods 
 ### apply
+### dot
+### matmul
 ## Properties
 
 |Property |      Type      |                         Description                         |
 |---------|----------------|-------------------------------------------------------------|
-|_matrix  |Eigen MatrixXcd | The stored matrix.                                          |
+|data     |Eigen MatrixXcd | The stored matrix.                                          |
 |dimension|int             | The Hilbert space dimension corresponding to the Hamiltonian|
-

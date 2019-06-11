@@ -26,7 +26,6 @@ Constructs a new ``RmsProp`` optimizer.
 |beta         |float=0.9  |Exponential decay rate.     |
 |epscut       |float=1e-07|Small cutoff value.         |
 
-
 ### Examples
 RmsProp optimizer.
 

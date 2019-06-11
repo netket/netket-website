@@ -21,6 +21,8 @@
   docs:
   - machine_RbmSpin
   - machine_RbmSpinSymm
+  - machine_RbmSpinPhase
+  - machine_RbmSpinReal
   - machine_RbmMultiVal
   - machine_FFNN
   - machine_Jastrow
