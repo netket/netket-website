@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>netket.optimizer.AdaGrad &#8212; netket v2.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jumbo-style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/all.min.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="netket.optimizer.AdaMax" href="netket.optimizer.AdaMax.html" />
+    <link rel="prev" title="netket.optimizer.AdaDelta" href="netket.optimizer.AdaDelta.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logonav.png"></span>
+          NetKet</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../get_started.html">Get Started</a></li>
+                <li><a href="../documentation.html">Documentation</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../citing.html">Citing NetKet</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="https://github.com/netket/netket"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/NetKetOrg"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">netket.optimizer.AdaGrad</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="netket-optimizer-adagrad">
+<h1>netket.optimizer.AdaGrad<a class="headerlink" href="#netket-optimizer-adagrad" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="netket.optimizer.AdaGrad">
+<em class="property">class </em><code class="sig-prename descclassname">netket.optimizer.</code><code class="sig-name descname">AdaGrad</code><a class="headerlink" href="#netket.optimizer.AdaGrad" title="Permalink to this definition">¶</a></dt>
+<dd><p>AdaGrad Optimizer.
+In many cases, in Sgd the learning rate :math`eta` should
+decay as a function of training iteration to prevent overshooting
+as the optimum is approached. AdaGrad is an adaptive learning
+rate algorithm that automatically scales the learning rate with a sum
+over past gradients. The vector <span class="math notranslate nohighlight">\(\mathbf{g}\)</span> is initialized to zero.
+Given a stochastic estimate of the gradient of the cost function <span class="math notranslate nohighlight">\(G(\mathbf{p})\)</span>,
+the updates for <span class="math notranslate nohighlight">\(g_k\)</span> and the parameter <span class="math notranslate nohighlight">\(p_k\)</span> are</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}g^\prime_k &amp;= g_k + G_k(\mathbf{p})^2\\
+p^\prime_k &amp;= p_k - \frac{\eta}{\sqrt{g_k + \epsilon}}G_k(\mathbf{p})\end{split}\]</div>
+<p>AdaGrad has been shown to perform particularly well when
+the gradients are sparse, but the learning rate may become too small
+after many updates because the sum over the squares of past gradients is cumulative.</p>
+<dl class="method">
+<dt id="netket.optimizer.AdaGrad.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.optimizer.AdaGrad</em>, <em class="sig-param">learning_rate: float = 0.001</em>, <em class="sig-param">epscut: float = 1e-07</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.optimizer.AdaGrad.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new <code class="docutils literal notranslate"><span class="pre">AdaGrad</span></code> optimizer.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>learning_rate</strong> – Learning rate <span class="math notranslate nohighlight">\(\eta\)</span>.</p></li>
+<li><p><strong>epscut</strong> – Small <span class="math notranslate nohighlight">\(\epsilon\)</span> cutoff.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Simple AdaDelta optimizer.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">netket.optimizer</span> <span class="k">import</span> <span class="n">AdaGrad</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">op</span> <span class="o">=</span> <span class="n">AdaGrad</span><span class="p">()</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.optimizer.AdaGrad.__init__" title="netket.optimizer.AdaGrad.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(self, learning_rate, epscut)</p></td>
+<td><p>Constructs a new <code class="docutils literal notranslate"><span class="pre">AdaGrad</span></code> optimizer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.optimizer.AdaGrad.init" title="netket.optimizer.AdaGrad.init"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init</span></code></a>(self, arg0, arg1)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.optimizer.AdaGrad.reset" title="netket.optimizer.AdaGrad.reset"><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code></a>(self)</p></td>
+<td><p>Member function resetting the internal state of the optimizer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.optimizer.AdaGrad.update" title="netket.optimizer.AdaGrad.update"><code class="xref py py-obj docutils literal notranslate"><span class="pre">update</span></code></a>(*args, **kwargs)</p></td>
+<td><p>Overloaded function.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="netket.optimizer.AdaGrad.init">
+<code class="sig-name descname">init</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.optimizer.Optimizer</em>, <em class="sig-param">arg0: int</em>, <em class="sig-param">arg1: bool</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.optimizer.AdaGrad.init" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="netket.optimizer.AdaGrad.reset">
+<code class="sig-name descname">reset</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.optimizer.Optimizer</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.optimizer.AdaGrad.reset" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function resetting the internal state of the optimizer.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.optimizer.AdaGrad.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param">*args</em>, <em class="sig-param">**kwargs</em><span class="sig-paren">)</span><a class="headerlink" href="#netket.optimizer.AdaGrad.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Overloaded function.</p>
+<ol class="arabic simple">
+<li><p>update(self: netket._C_netket.optimizer.Optimizer, grad: numpy.ndarray[float64[m, 1]], param: numpy.ndarray[float64[m, 1], flags.writeable]) -&gt; None</p></li>
+</ol>
+<p>Update <cite>param</cite> by applying a gradient-based optimization step using <cite>grad</cite>.</p>
+<ol class="arabic simple" start="2">
+<li><p>update(self: netket._C_netket.optimizer.Optimizer, grad: numpy.ndarray[complex128[m, 1]], param: numpy.ndarray[complex128[m, 1], flags.writeable]) -&gt; None</p></li>
+</ol>
+<p>Update <cite>param</cite> by applying a gradient-based optimization step using <cite>grad</cite>.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, The Simons Foundation, Inc. - All rights reserved.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

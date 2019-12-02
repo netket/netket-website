@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Requirements &#8212; netket v2.1 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/jumbo-style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/all.min.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="&lt;no title&gt;" href="about.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="get_started.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><span><img src="_static/logonav.png"></span>
+          NetKet</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="get_started.html">Get Started</a></li>
+                <li><a href="documentation.html">Documentation</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="citing.html">Citing NetKet</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://github.com/netket/netket"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/NetKetOrg"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+    <div class="body col-md-12 content" role="main">
+      
+  <div class="section" id="requirements">
+<h1>Requirements<a class="headerlink" href="#requirements" title="Permalink to this headline">¶</a></h1>
+<p>NetKet is a light-weight framework with minimal dependencies on external libraries.
+Dependencies are discussed below, together with common strategies to install them on your machine.
+In a nutshell, the only strict requirements are a working <code class="docutils literal notranslate"><span class="pre">MPI</span></code> C++ compiler, <code class="docutils literal notranslate"><span class="pre">CMake</span></code>, and a modern
+Python interpreter.</p>
+<p><h2 class="bg-primary">MPI and CMake</h2>
+In order to install NetKet you need to have a working C++11 compiler installed on your computer.
+NetKet relies on <a class="reference external" href="https://en.wikipedia.org/wiki/Message_Passing_Interface">MPI</a> to provide seamless parallelism on multiples computing cores.</p>
+<p>Below you can find more detailed, platform-dependent steps to install those requirements.</p>
+<div class="section" id="mac">
+<h2>Mac<a class="headerlink" href="#mac" title="Permalink to this headline">¶</a></h2>
+<p>On Mac Os, one of the simplest strategy to get <code class="docutils literal notranslate"><span class="pre">MPI</span></code> and <code class="docutils literal notranslate"><span class="pre">CMake</span></code> is to first get <a class="reference external" href="https://brew.sh">https://brew.sh</a> and then either do:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew install cmake open-mpi
+</pre></div>
+</div>
+<p>to get <a class="reference external" href="https://www.open-mpi.org">Open MPI</a>, or if you prefer <a class="reference external" href="https://www.mpich.org">MPICH</a> :</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>brew install cmake mpich
+</pre></div>
+</div>
+</div>
+<div class="section" id="ubuntu">
+<h2>Ubuntu<a class="headerlink" href="#ubuntu" title="Permalink to this headline">¶</a></h2>
+<p>On Ubuntu you can get <a class="reference external" href="https://www.open-mpi.org">Open MPI</a> and the needed development headers doing:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install cmake libopenmpi-dev openmpi-bin openmpi-doc
+</pre></div>
+</div>
+<p>Alternatively, you can have <a class="reference external" href="https://www.mpich.org">MPICH</a>:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo apt-get install cmake libmpich-dev mpich
+</pre></div>
+</div>
+</div>
+<div class="section" id="other-platforms">
+<h2>Other platforms<a class="headerlink" href="#other-platforms" title="Permalink to this headline">¶</a></h2>
+<p>On other platforms/Linux distributions, it is fairly easy to find pre-compiled packages, for example you can have a look at these installation guidelines: <a class="reference external" href="https://cmake.org/download/">CMake</a>, <a class="reference external" href="http://www.mpich.org/downloads/">MPICH</a>.</p>
+<p><h2 class="bg-primary">Optional Python Libraries</h2></p>
+<p>It is also suggested to have [IPython][https://ipython.readthedocs.io/en/stable/], and <a class="reference external" href="https://matplotlib.org/">matplotlib</a> installed, to fully enjoy our Tutorials and Examples.</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>pip install matplotlib jupyter
+</pre></div>
+</div>
+<p><h2 class="bg-primary">Other Dependencies</h2>
+NetKet also relies on a few header-only external libraries:</p>
+<ol class="simple">
+<li><p><a class="reference external" href="eigen.tuxfamily.org/">Eigen</a>, one of the best modern C++ library for linear algebra and matrix manipulation</p></li>
+<li><p><a class="reference external" href="https://pybind11.readthedocs.io/en/master/">Pybind11</a>, a great library to create Python bindings of existing C++ code</p></li>
+<li><p><a class="reference external" href="https://github.com/nlohmann/json">JSON for modern C++</a>, an excellent light-weight library to handle JSON input/output and serialization/deserialization</p></li>
+</ol>
+<p>For your convenience, those three libraries are already included in NetKet, and you don’t need to take further action to download/install them.
+If you wanted to use another version of the external libraries, you can always link them to your project when manually compiling NetKet. To do so, please have a look at the variables defined in <code class="docutils literal notranslate"><span class="pre">CMakelists.txt</span></code>.</p>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, The Simons Foundation, Inc. - All rights reserved.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

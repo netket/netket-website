@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>netket.machine.MPSPeriodic &#8212; netket v2.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jumbo-style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/all.min.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="netket.machine.MPSPeriodicDiagonal" href="netket.machine.MPSPeriodicDiagonal.html" />
+    <link rel="prev" title="netket.machine.JastrowSymm" href="netket.machine.JastrowSymm.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logonav.png"></span>
+          NetKet</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../get_started.html">Get Started</a></li>
+                <li><a href="../documentation.html">Documentation</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../citing.html">Citing NetKet</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="https://github.com/netket/netket"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/NetKetOrg"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">netket.machine.MPSPeriodic</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="netket-machine-mpsperiodic">
+<h1>netket.machine.MPSPeriodic<a class="headerlink" href="#netket-machine-mpsperiodic" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="netket.machine.MPSPeriodic">
+<em class="property">class </em><code class="sig-prename descclassname">netket.machine.</code><code class="sig-name descname">MPSPeriodic</code><a class="headerlink" href="#netket.machine.MPSPeriodic" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="method">
+<dt id="netket.machine.MPSPeriodic.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.MPSPeriodic</em>, <em class="sig-param">hilbert: netket._C_netket.hilbert.Hilbert</em>, <em class="sig-param">bond_dim: int</em>, <em class="sig-param">diag: bool = False</em>, <em class="sig-param">symperiod: int = -1</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.machine.MPSPeriodic.__init__" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.__init__" title="netket.machine.MPSPeriodic.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(self, hilbert, bond_dim, diag, …)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.der_log" title="netket.machine.MPSPeriodic.der_log"><code class="xref py py-obj docutils literal notranslate"><span class="pre">der_log</span></code></a>(self, v)</p></td>
+<td><p>Member function to obtain the derivatives of log value of machine given an input wrt the machine’s parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.init_random_parameters" title="netket.machine.MPSPeriodic.init_random_parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">init_random_parameters</span></code></a>(self, sigma, seed, …)</p></td>
+<td><p>Member function to initialise machine parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.load" title="netket.machine.MPSPeriodic.load"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load</span></code></a>(self, filename)</p></td>
+<td><p>Member function to load machine parameters from a json file.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.load_state_dict" title="netket.machine.MPSPeriodic.load_state_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">load_state_dict</span></code></a>(self, arg0)</p></td>
+<td><p>Loads machine’s state from <cite>state</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.log_norm" title="netket.machine.MPSPeriodic.log_norm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_norm</span></code></a>(self)</p></td>
+<td><p>Returns the log of the L2 norm of the wave-function.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.log_val" title="netket.machine.MPSPeriodic.log_val"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_val</span></code></a>(self, v)</p></td>
+<td><p>Member function to obtain log value of machine given an input vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.log_val_diff" title="netket.machine.MPSPeriodic.log_val_diff"><code class="xref py py-obj docutils literal notranslate"><span class="pre">log_val_diff</span></code></a>(self, v, 1]], tochange, newconf)</p></td>
+<td><p>Member function to obtain difference in log value of machine given an input and a change to the input.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.save" title="netket.machine.MPSPeriodic.save"><code class="xref py py-obj docutils literal notranslate"><span class="pre">save</span></code></a>(self, filename)</p></td>
+<td><p>Member function to save the machine parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.state_dict" title="netket.machine.MPSPeriodic.state_dict"><code class="xref py py-obj docutils literal notranslate"><span class="pre">state_dict</span></code></a>(self)</p></td>
+<td><p>Returns machine’s state as a dictionary.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.to_array" title="netket.machine.MPSPeriodic.to_array"><code class="xref py py-obj docutils literal notranslate"><span class="pre">to_array</span></code></a>(self, normalize)</p></td>
+<td><p>Returns a numpy array representation of the machine.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.hilbert" title="netket.machine.MPSPeriodic.hilbert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">hilbert</span></code></a></p></td>
+<td><p>The hilbert space object of the system.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.is_holomorphic" title="netket.machine.MPSPeriodic.is_holomorphic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_holomorphic</span></code></a></p></td>
+<td><p>Whether the given wave-function is a holomorphic function of its parameters</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.n_par" title="netket.machine.MPSPeriodic.n_par"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_par</span></code></a></p></td>
+<td><p>The number of parameters in the machine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.n_visible" title="netket.machine.MPSPeriodic.n_visible"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_visible</span></code></a></p></td>
+<td><p>The number of inputs into the machine aka visible units in the case of Restricted Boltzmann Machines.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.machine.MPSPeriodic.parameters" title="netket.machine.MPSPeriodic.parameters"><code class="xref py py-obj docutils literal notranslate"><span class="pre">parameters</span></code></a></p></td>
+<td><p>List containing the parameters within the layer.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.der_log">
+<code class="sig-name descname">der_log</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine, v: numpy.ndarray[float64]</em><span class="sig-paren">)</span> &#x2192; object<a class="headerlink" href="#netket.machine.MPSPeriodic.der_log" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function to obtain the derivatives of log value of
+machine given an input wrt the machine’s parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v</strong> – Input vector to machine.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.hilbert">
+<em class="property">property </em><code class="sig-name descname">hilbert</code><a class="headerlink" href="#netket.machine.MPSPeriodic.hilbert" title="Permalink to this definition">¶</a></dt>
+<dd><p>The hilbert space object of the system.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>netket.hilbert.Hilbert</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.init_random_parameters">
+<code class="sig-name descname">init_random_parameters</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine</em>, <em class="sig-param">sigma: float = 0.1</em>, <em class="sig-param">seed: Optional[int] = None</em>, <em class="sig-param">rand_gen: std::__1::mersenne_twister_engine&lt;unsigned int</em>, <em class="sig-param">32ul</em>, <em class="sig-param">624ul</em>, <em class="sig-param">397ul</em>, <em class="sig-param">31ul</em>, <em class="sig-param">2567483615u</em>, <em class="sig-param">11ul</em>, <em class="sig-param">4294967295u</em>, <em class="sig-param">7ul</em>, <em class="sig-param">2636928640u</em>, <em class="sig-param">15ul</em>, <em class="sig-param">4022730752u</em>, <em class="sig-param">18ul</em>, <em class="sig-param">1812433253u&gt; = None</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.machine.MPSPeriodic.init_random_parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function to initialise machine parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>sigma</strong> – Standard deviation of normal distribution from which
+parameters are drawn.</p></li>
+<li><p><strong>seed</strong> – The random number generator seed. If not given, rand_gen
+is considered instead.</p></li>
+<li><p><strong>rand_gen</strong> – The random number generator (netket.RandomEngine) to be used.
+If not given, the global random generator (with its current state)
+is used.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.is_holomorphic">
+<em class="property">property </em><code class="sig-name descname">is_holomorphic</code><a class="headerlink" href="#netket.machine.MPSPeriodic.is_holomorphic" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the given wave-function is a holomorphic function of
+its parameters</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.load">
+<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine</em>, <em class="sig-param">filename: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.machine.MPSPeriodic.load" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function to load machine parameters from a json file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – name of file to load parameters from.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.load_state_dict">
+<code class="sig-name descname">load_state_dict</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine</em>, <em class="sig-param">arg0: dict</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.machine.MPSPeriodic.load_state_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Loads machine’s state from <cite>state</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.log_norm">
+<code class="sig-name descname">log_norm</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine</em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#netket.machine.MPSPeriodic.log_norm" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns the log of the L2 norm of the wave-function.
+This operation is a brute-force calculation, and should thus
+only be performed for low-dimensional Hilbert spaces.</p>
+<p>This method requires an indexable Hilbert space.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.log_val">
+<code class="sig-name descname">log_val</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine, v: numpy.ndarray[float64]</em><span class="sig-paren">)</span> &#x2192; object<a class="headerlink" href="#netket.machine.MPSPeriodic.log_val" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function to obtain log value of machine given an input
+vector.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>v</strong> – Input vector to machine.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.log_val_diff">
+<code class="sig-name descname">log_val_diff</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine, v: numpy.ndarray[float64[m, 1]], tochange: List[List[int]], newconf: List[List[float]]</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[complex128[m, 1]]<a class="headerlink" href="#netket.machine.MPSPeriodic.log_val_diff" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function to obtain difference in log value of machine
+given an input and a change to the input.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>v</strong> – Input vector to machine.</p></li>
+<li><p><strong>tochange</strong> – list containing the indices of the input to be
+changed</p></li>
+<li><p><strong>newconf</strong> – list containing the new (changed) values at the
+indices specified in tochange</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.n_par">
+<em class="property">property </em><code class="sig-name descname">n_par</code><a class="headerlink" href="#netket.machine.MPSPeriodic.n_par" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of parameters in the machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.n_visible">
+<em class="property">property </em><code class="sig-name descname">n_visible</code><a class="headerlink" href="#netket.machine.MPSPeriodic.n_visible" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of inputs into the machine aka visible units in
+the case of Restricted Boltzmann Machines.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.parameters">
+<em class="property">property </em><code class="sig-name descname">parameters</code><a class="headerlink" href="#netket.machine.MPSPeriodic.parameters" title="Permalink to this definition">¶</a></dt>
+<dd><p>List containing the parameters within the layer.
+Read and write</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.save">
+<code class="sig-name descname">save</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine</em>, <em class="sig-param">filename: str</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.machine.MPSPeriodic.save" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function to save the machine parameters.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filename</strong> – name of file to save parameters to.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.state_dict">
+<code class="sig-name descname">state_dict</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine</em><span class="sig-paren">)</span> &#x2192; object<a class="headerlink" href="#netket.machine.MPSPeriodic.state_dict" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns machine’s state as a dictionary. Similar to <cite>torch.nn.Module.state_dict</cite>.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.machine.MPSPeriodic.to_array">
+<code class="sig-name descname">to_array</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.machine.Machine</em>, <em class="sig-param">normalize: bool = True</em><span class="sig-paren">)</span> &#x2192; numpy.ndarray[complex128[m, 1]]<a class="headerlink" href="#netket.machine.MPSPeriodic.to_array" title="Permalink to this definition">¶</a></dt>
+<dd><p>Returns a numpy array representation of the machine.
+The returned array is normalized to 1 in L2 norm.
+Note that, in general, the size of the array is exponential
+in the number of quantum numbers, and this operation should thus
+only be performed for low-dimensional Hilbert spaces.</p>
+<p>This method requires an indexable Hilbert space.</p>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, The Simons Foundation, Inc. - All rights reserved.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
