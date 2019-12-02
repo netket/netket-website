@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>netket.sampler.MetropolisLocal &#8212; netket v2.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jumbo-style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/all.min.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="netket.sampler.MetropolisLocalPt" href="netket.sampler.MetropolisLocalPt.html" />
+    <link rel="prev" title="netket.sampler.MetropolisExchangePt" href="netket.sampler.MetropolisExchangePt.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logonav.png"></span>
+          NetKet</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../get_started.html">Get Started</a></li>
+                <li><a href="../documentation.html">Documentation</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../citing.html">Citing NetKet</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="https://github.com/netket/netket"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/NetKetOrg"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">netket.sampler.MetropolisLocal</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="netket-sampler-metropolislocal">
+<h1>netket.sampler.MetropolisLocal<a class="headerlink" href="#netket-sampler-metropolislocal" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="netket.sampler.MetropolisLocal">
+<em class="property">class </em><code class="sig-prename descclassname">netket.sampler.</code><code class="sig-name descname">MetropolisLocal</code><span class="sig-paren">(</span><em class="sig-param">machine</em>, <em class="sig-param">n_chains=16</em>, <em class="sig-param">sweep_size=None</em>, <em class="sig-param">batch_size=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/netket/sampler/metropolis_hastings.html#MetropolisLocal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#netket.sampler.MetropolisLocal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sampler acting on one local degree of freedom.</p>
+<p>This sampler acts locally only on one local degree of freedom <span class="math notranslate nohighlight">\(s_i\)</span>,
+and proposes a new state: <span class="math notranslate nohighlight">\(s_1 \dots s^\prime_i \dots s_N\)</span>,
+where <span class="math notranslate nohighlight">\(s^\prime_i \neq s_i\)</span>.</p>
+<p>The transition probability associated to this
+sampler can be decomposed into two steps:</p>
+<p>1. One of the site indices <span class="math notranslate nohighlight">\(i = 1\dots N\)</span> is chosen
+with uniform probability.
+2. Among all the possible (<span class="math notranslate nohighlight">\(m\)</span>) values that <span class="math notranslate nohighlight">\(s_i\)</span> can take,
+one of them is chosen with uniform probability.</p>
+<p>For example, in the case of spin <span class="math notranslate nohighlight">\(1/2\)</span> particles, <span class="math notranslate nohighlight">\(m=2\)</span>
+and the possible local values are <span class="math notranslate nohighlight">\(s_i = -1,+1\)</span>.
+In this case then <a class="reference internal" href="#netket.sampler.MetropolisLocal" title="netket.sampler.MetropolisLocal"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetropolisLocal</span></code></a> is equivalent to flipping a random spin.</p>
+<p>In the case of bosons, with occupation numbers
+<span class="math notranslate nohighlight">\(s_i = 0, 1, \dots n_{\mathrm{max}}\)</span>, <a class="reference internal" href="#netket.sampler.MetropolisLocal" title="netket.sampler.MetropolisLocal"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetropolisLocal</span></code></a>
+would pick a random local occupation number uniformly between <span class="math notranslate nohighlight">\(0\)</span>
+and <span class="math notranslate nohighlight">\(n_{\mathrm{max}}\)</span>.</p>
+<dl class="method">
+<dt id="netket.sampler.MetropolisLocal.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">machine</em>, <em class="sig-param">n_chains=16</em>, <em class="sig-param">sweep_size=None</em>, <em class="sig-param">batch_size=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/netket/sampler/metropolis_hastings.html#MetropolisLocal.__init__"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#netket.sampler.MetropolisLocal.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new <a class="reference internal" href="#netket.sampler.MetropolisLocal" title="netket.sampler.MetropolisLocal"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetropolisLocal</span></code></a> sampler given a machine.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>machine</strong> – A machine <span class="math notranslate nohighlight">\(\Psi(s)\)</span> used for the sampling.
+The probability distribution being sampled
+from is <span class="math notranslate nohighlight">\(F(\Psi(s))\)</span>, where the function
+<span class="math notranslate nohighlight">\(F(X)\)</span>, is arbitrary, by default <span class="math notranslate nohighlight">\(F(X)=|X|^2\)</span>.</p></li>
+<li><p><strong>n_chains</strong> – The number of Markov Chain to be run in parallel on a single process.</p></li>
+<li><p><strong>sweep_size</strong> – The number of exchanges that compose a single sweep.
+If None, sweep_size is equal to the number of degrees of freedom (n_visible).</p></li>
+<li><p><strong>batch_size</strong> – The batch size to be used when calling log_val on the given Machine.
+If None, batch_size is equal to the number Markov chains (n_chains).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Sampling from a RBM machine in a 1D lattice of spin 1/2</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">netket</span> <span class="k">as</span> <span class="nn">nk</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">=</span><span class="n">nk</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Hypercube</span><span class="p">(</span><span class="n">length</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="n">n_dim</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span><span class="n">pbc</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">hi</span><span class="o">=</span><span class="n">nk</span><span class="o">.</span><span class="n">hilbert</span><span class="o">.</span><span class="n">Spin</span><span class="p">(</span><span class="n">s</span><span class="o">=</span><span class="mf">0.5</span><span class="p">,</span><span class="n">graph</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># RBM Spin Machine</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">ma</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">machine</span><span class="o">.</span><span class="n">RbmSpin</span><span class="p">(</span><span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">hilbert</span><span class="o">=</span><span class="n">hi</span><span class="p">)</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="c1"># Construct a MetropolisLocal Sampler</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">sa</span> <span class="o">=</span> <span class="n">nk</span><span class="o">.</span><span class="n">sampler</span><span class="o">.</span><span class="n">MetropolisLocal</span><span class="p">(</span><span class="n">machine</span><span class="o">=</span><span class="n">ma</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">sa</span><span class="o">.</span><span class="n">machine</span><span class="o">.</span><span class="n">hilbert</span><span class="o">.</span><span class="n">size</span><span class="p">)</span>
+<span class="go">100</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.sampler.MetropolisLocal.__init__" title="netket.sampler.MetropolisLocal.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(machine[, n_chains, sweep_size, …])</p></td>
+<td><p>Constructs a new <a class="reference internal" href="#netket.sampler.MetropolisLocal" title="netket.sampler.MetropolisLocal"><code class="xref py py-class docutils literal notranslate"><span class="pre">MetropolisLocal</span></code></a> sampler given a machine.</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">generate_samples</span></code>(n_samples[, init_random, …])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">reset</span></code>([init_random])</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">samples</span></code>(n_max[, init_random])</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><code class="xref py py-obj docutils literal notranslate"><span class="pre">machine_func</span></code></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, The Simons Foundation, Inc. - All rights reserved.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

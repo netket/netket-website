@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Documentation &#8212; netket v2.1 documentation</title>
+    <link rel="stylesheet" href="_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/jumbo-style.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/all.min.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="author" title="About these documents" href="about.html" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="netket.graph.Edgeless" href="modules/netket.graph.Edgeless.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="index.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html"><span><img src="_static/logonav.png"></span>
+          NetKet</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="get_started.html">Get Started</a></li>
+                <li><a href="#">Documentation</a></li>
+                <li><a href="tutorials.html">Tutorials</a></li>
+                <li><a href="citing.html">Citing NetKet</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="https://github.com/netket/netket"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/NetKetOrg"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul class="globaltoc"
+></ul><ul>
+<li><a class="reference internal" href="#">Documentation</a><ul>
+<li><a class="reference internal" href="#graphs">Graphs</a></li>
+<li><a class="reference internal" href="#hilbert">Hilbert</a></li>
+<li><a class="reference internal" href="#operators">Operators</a></li>
+<li><a class="reference internal" href="#optimizer">Optimizer</a></li>
+<li><a class="reference internal" href="#machines">Machines</a></li>
+<li><a class="reference internal" href="#samplers">Samplers</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="documentation">
+<h1>Documentation<a class="headerlink" href="#documentation" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="graphs">
+<h2>Graphs<a class="headerlink" href="#graphs" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.graph.Edgeless.html#netket.graph.Edgeless" title="netket.graph.Edgeless"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.graph.Edgeless</span></code></a></p></td>
+<td><p>A set graph (collection of unconnected vertices).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.graph.Hypercube.html#netket.graph.Hypercube" title="netket.graph.Hypercube"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.graph.Hypercube</span></code></a></p></td>
+<td><p>A hypercube lattice of side L in d dimensions.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.graph.Lattice.html#netket.graph.Lattice" title="netket.graph.Lattice"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.graph.Lattice</span></code></a></p></td>
+<td><p>A generic lattice built translating a unit cell and adding edges between nearest neighbours sites.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="hilbert">
+<h2>Hilbert<a class="headerlink" href="#hilbert" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.hilbert.Boson.html#netket.hilbert.Boson" title="netket.hilbert.Boson"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.hilbert.Boson</span></code></a></p></td>
+<td><p>Hilbert space composed of bosonic states.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.hilbert.CustomHilbert.html#netket.hilbert.CustomHilbert" title="netket.hilbert.CustomHilbert"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.hilbert.CustomHilbert</span></code></a></p></td>
+<td><p>A custom hilbert space.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.hilbert.Spin.html#netket.hilbert.Spin" title="netket.hilbert.Spin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.hilbert.Spin</span></code></a></p></td>
+<td><p>Hilbert space composed of spin states.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="operators">
+<h2>Operators<a class="headerlink" href="#operators" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.operator.BoseHubbard.html#netket.operator.BoseHubbard" title="netket.operator.BoseHubbard"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.operator.BoseHubbard</span></code></a></p></td>
+<td><p>A Bose Hubbard model Hamiltonian operator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.operator.GraphOperator.html#netket.operator.GraphOperator" title="netket.operator.GraphOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.operator.GraphOperator</span></code></a></p></td>
+<td><p>A custom graph based operator.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.operator.LocalOperator.html#netket.operator.LocalOperator" title="netket.operator.LocalOperator"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.operator.LocalOperator</span></code></a></p></td>
+<td><p>A custom local operator.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.operator.Ising.html#netket.operator.Ising" title="netket.operator.Ising"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.operator.Ising</span></code></a></p></td>
+<td><p>Constructs a new <code class="docutils literal notranslate"><span class="pre">Ising</span></code> given a hilbert space, a transverse field, and (if specified) a coupling constant.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.operator.Heisenberg.html#netket.operator.Heisenberg" title="netket.operator.Heisenberg"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.operator.Heisenberg</span></code></a></p></td>
+<td><p>Constructs a new <code class="docutils literal notranslate"><span class="pre">Heisenberg</span></code> given a hilbert space.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="optimizer">
+<h2>Optimizer<a class="headerlink" href="#optimizer" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.optimizer.AdaDelta.html#netket.optimizer.AdaDelta" title="netket.optimizer.AdaDelta"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.optimizer.AdaDelta</span></code></a></p></td>
+<td><p>AdaDelta Optimizer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.optimizer.AdaGrad.html#netket.optimizer.AdaGrad" title="netket.optimizer.AdaGrad"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.optimizer.AdaGrad</span></code></a></p></td>
+<td><p>AdaGrad Optimizer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.optimizer.AdaMax.html#netket.optimizer.AdaMax" title="netket.optimizer.AdaMax"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.optimizer.AdaMax</span></code></a></p></td>
+<td><p>AdaMax Optimizer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.optimizer.Momentum.html#netket.optimizer.Momentum" title="netket.optimizer.Momentum"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.optimizer.Momentum</span></code></a></p></td>
+<td><p>Momentum-based Optimizer.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.optimizer.RmsProp.html#netket.optimizer.RmsProp" title="netket.optimizer.RmsProp"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.optimizer.RmsProp</span></code></a></p></td>
+<td><p>RMSProp optimizer.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.optimizer.Sgd.html#netket.optimizer.Sgd" title="netket.optimizer.Sgd"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.optimizer.Sgd</span></code></a></p></td>
+<td><p>Simple Stochastic Gradient Descent Optimizer.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="machines">
+<h2>Machines<a class="headerlink" href="#machines" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.machine.RbmSpin.html#netket.machine.RbmSpin" title="netket.machine.RbmSpin"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.RbmSpin</span></code></a></p></td>
+<td><p>A fully connected Restricted Boltzmann Machine (RBM).</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.machine.RbmSpinSymm.html#netket.machine.RbmSpinSymm" title="netket.machine.RbmSpinSymm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.RbmSpinSymm</span></code></a></p></td>
+<td><p>A fully connected Restricted Boltzmann Machine with lattice symmetries.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.machine.RbmSpinPhase.html#netket.machine.RbmSpinPhase" title="netket.machine.RbmSpinPhase"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.RbmSpinPhase</span></code></a></p></td>
+<td><p>A fully connected Restricted Boltzmann Machine (RBM) with real-valued parameters.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.machine.RbmSpinReal.html#netket.machine.RbmSpinReal" title="netket.machine.RbmSpinReal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.RbmSpinReal</span></code></a></p></td>
+<td><p>A fully connected Restricted Boltzmann Machine (RBM) with real-valued parameters.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.machine.RbmMultiVal.html#netket.machine.RbmMultiVal" title="netket.machine.RbmMultiVal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.RbmMultiVal</span></code></a></p></td>
+<td><p>A fully connected Restricted Boltzmann Machine for handling larger local Hilbert spaces.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.machine.FFNN.html#netket.machine.FFNN" title="netket.machine.FFNN"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.FFNN</span></code></a></p></td>
+<td><p>A feedforward neural network (FFNN) Machine.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.machine.Jastrow.html#netket.machine.Jastrow" title="netket.machine.Jastrow"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.Jastrow</span></code></a></p></td>
+<td><p>A Jastrow wavefunction Machine.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.machine.JastrowSymm.html#netket.machine.JastrowSymm" title="netket.machine.JastrowSymm"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.JastrowSymm</span></code></a></p></td>
+<td><p>A Jastrow wavefunction Machine with lattice symmetries.This machine defines the wavefunction as follows:</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.machine.MPSPeriodic.html#netket.machine.MPSPeriodic" title="netket.machine.MPSPeriodic"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.MPSPeriodic</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.machine.MPSPeriodicDiagonal.html#netket.machine.MPSPeriodicDiagonal" title="netket.machine.MPSPeriodicDiagonal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.machine.MPSPeriodicDiagonal</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="samplers">
+<h2>Samplers<a class="headerlink" href="#samplers" title="Permalink to this headline">¶</a></h2>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.sampler.MetropolisExchange.html#netket.sampler.MetropolisExchange" title="netket.sampler.MetropolisExchange"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.sampler.MetropolisExchange</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.sampler.MetropolisExchangePt.html#netket.sampler.MetropolisExchangePt" title="netket.sampler.MetropolisExchangePt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.sampler.MetropolisExchangePt</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="modules/netket.sampler.MetropolisLocal.html#netket.sampler.MetropolisLocal" title="netket.sampler.MetropolisLocal"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.sampler.MetropolisLocal</span></code></a></p></td>
+<td><p>Sampler acting on one local degree of freedom.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="modules/netket.sampler.MetropolisLocalPt.html#netket.sampler.MetropolisLocalPt" title="netket.sampler.MetropolisLocalPt"><code class="xref py py-obj docutils literal notranslate"><span class="pre">netket.sampler.MetropolisLocalPt</span></code></a></p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, The Simons Foundation, Inc. - All rights reserved.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>

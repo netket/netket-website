@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>netket.graph.Lattice &#8212; netket v2.1 documentation</title>
+    <link rel="stylesheet" href="../_static/bootstrap-sphinx.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/jumbo-style.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/all.min.css" />
+    <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/language_data.js"></script>
+    <script crossorigin="anonymous" integrity="sha256-Ae2Vz/4ePdIu6ZyI/5ZGsYnb+m0JlOmKPjt6XZ9JJkA=" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script async="async" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "processEscapes": true, "ignoreClass": "document", "processClass": "math|output_area"}})</script>
+    <link rel="author" title="About these documents" href="../about.html" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="netket.hilbert.Boson" href="netket.hilbert.Boson.html" />
+    <link rel="prev" title="netket.graph.Hypercube" href="netket.graph.Hypercube.html" />
+<meta charset='utf-8'>
+<meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1'>
+<meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1'>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<script type="text/javascript" src="../_static/js/jquery-1.11.0.min.js "></script>
+<script type="text/javascript" src="../_static/js/jquery-fix.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-3.3.7/js/bootstrap.min.js "></script>
+<script type="text/javascript" src="../_static/bootstrap-sphinx.js "></script>
+
+  </head><body>
+
+  <div id="navbar" class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="../index.html"><span><img src="../_static/logonav.png"></span>
+          NetKet</a>
+        <span class="navbar-text navbar-version pull-left"><b></b></span>
+      </div>
+
+        <div class="collapse navbar-collapse nav-collapse">
+          <ul class="nav navbar-nav">
+            
+                <li><a href="../get_started.html">Get Started</a></li>
+                <li><a href="../documentation.html">Documentation</a></li>
+                <li><a href="../tutorials.html">Tutorials</a></li>
+                <li><a href="../citing.html">Citing NetKet</a></li>
+                <li><a href="../about.html">About</a></li>
+                <li><a href="https://github.com/netket/netket"><i class="fab fa-github" aria-hidden="true"></i></a></li>
+                <li><a href="https://twitter.com/NetKetOrg"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+            
+            
+              <li class="dropdown globaltoc-container">
+  <a role="button"
+     id="dLabelGlobalToc"
+     data-toggle="dropdown"
+     data-target="#"
+     href="../index.html">Site <b class="caret"></b></a>
+  <ul class="dropdown-menu globaltoc"
+      role="menu"
+      aria-labelledby="dLabelGlobalToc"></ul>
+</li>
+              
+            
+            
+            
+            
+            
+          </ul>
+
+          
+            
+<form class="navbar-form navbar-right" action="../search.html" method="get">
+ <div class="form-group">
+  <input type="text" name="q" class="form-control" placeholder="Search" />
+ </div>
+  <input type="hidden" name="check_keywords" value="yes" />
+  <input type="hidden" name="area" value="default" />
+</form>
+          
+        </div>
+    </div>
+  </div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-3">
+        <div id="sidebar" class="bs-sidenav" role="complementary"><ul>
+<li><a class="reference internal" href="#">netket.graph.Lattice</a></li>
+</ul>
+
+        </div>
+      </div>
+    <div class="body col-md-9 content" role="main">
+      
+  <div class="section" id="netket-graph-lattice">
+<h1>netket.graph.Lattice<a class="headerlink" href="#netket-graph-lattice" title="Permalink to this headline">¶</a></h1>
+<dl class="class">
+<dt id="netket.graph.Lattice">
+<em class="property">class </em><code class="sig-prename descclassname">netket.graph.</code><code class="sig-name descname">Lattice</code><a class="headerlink" href="#netket.graph.Lattice" title="Permalink to this definition">¶</a></dt>
+<dd><p>A generic lattice built translating a unit cell and adding edges between nearest neighbours sites.
+The unit cell is defined by the <code class="docutils literal notranslate"><span class="pre">basis_vectors</span></code> and it can contain an arbitrary number of atoms.
+Each atom is located at an arbitrary position and is labelled by an integer number,
+meant to distinguish between the different atoms within the unit cell.
+Periodic boundary conditions can also be imposed along the desired directions.
+There are three different ways to refer to the lattice sites. A site can be labelled
+by a simple integer number (the site index), by its coordinates (actual position in space),
+or by a set of integers (the site vector), which indicates how many
+translations of each basis vectors have been performed while building the
+graph. The i-th component refers to translations along the i-th <code class="docutils literal notranslate"><span class="pre">basis_vector</span></code> direction.</p>
+<dl class="method">
+<dt id="netket.graph.Lattice.__init__">
+<code class="sig-name descname">__init__</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.graph.Lattice, basis_vectors: List[List[float]], extent: List[int], pbc: List[bool] = [], atoms_coord: List[List[float]] = []</em><span class="sig-paren">)</span> &#x2192; None<a class="headerlink" href="#netket.graph.Lattice.__init__" title="Permalink to this definition">¶</a></dt>
+<dd><p>Constructs a new <code class="docutils literal notranslate"><span class="pre">Lattice</span></code> given its side length and the features of the unit cell.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>basis_vectors</strong> – The basis vectors of the unit cell.</p></li>
+<li><p><strong>extent</strong> – The number of copies of the unit cell.</p></li>
+<li><p><strong>pbc</strong> – If <code class="docutils literal notranslate"><span class="pre">True</span></code> then the constructed lattice
+will have periodic boundary conditions, otherwise
+open boundary conditions are imposed (default=``True``).</p></li>
+<li><p><strong>atoms_coord</strong> – The coordinates of different atoms in the unit cell (default=one atom at the origin).</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Constructs a rectangular 3X4 lattice with periodic boundary conditions.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">netket</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">=</span><span class="n">netket</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Lattice</span><span class="p">(</span><span class="n">basis_vectors</span><span class="o">=</span><span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">0</span><span class="p">],[</span><span class="mi">0</span><span class="p">,</span><span class="mi">1</span><span class="p">]],</span><span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">g</span><span class="o">.</span><span class="n">n_sites</span><span class="p">)</span>
+<span class="go">12</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<p class="rubric">Methods</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.graph.Lattice.__init__" title="netket.graph.Lattice.__init__"><code class="xref py py-obj docutils literal notranslate"><span class="pre">__init__</span></code></a>(self, basis_vectors, extent, pbc, …)</p></td>
+<td><p>Constructs a new <code class="docutils literal notranslate"><span class="pre">Lattice</span></code> given its side length and the features of the unit cell.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.graph.Lattice.atom_label" title="netket.graph.Lattice.atom_label"><code class="xref py py-obj docutils literal notranslate"><span class="pre">atom_label</span></code></a>(self, site)</p></td>
+<td><p>Member function returning the atom label indicating which of the unit cell atoms is located at a given a site index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.graph.Lattice.site_to_coord" title="netket.graph.Lattice.site_to_coord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">site_to_coord</span></code></a>(self, site)</p></td>
+<td><p>Member function returning the coordinates of a given site index.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.graph.Lattice.site_to_vector" title="netket.graph.Lattice.site_to_vector"><code class="xref py py-obj docutils literal notranslate"><span class="pre">site_to_vector</span></code></a>(self, site)</p></td>
+<td><p>Member function returning the site vector corresponding to a given site index.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.graph.Lattice.vector_to_coord" title="netket.graph.Lattice.vector_to_coord"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vector_to_coord</span></code></a>(self, site_vector, atom_label)</p></td>
+<td><p>Member function returning the coordinates of a given atom characterized by a given site vector.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.graph.Lattice.vector_to_site" title="netket.graph.Lattice.vector_to_site"><code class="xref py py-obj docutils literal notranslate"><span class="pre">vector_to_site</span></code></a>(self, site_vector)</p></td>
+<td><p>Member function returning the site index corresponding to a given site vector.</p></td>
+</tr>
+</tbody>
+</table>
+<p class="rubric">Attributes</p>
+<table class="longtable docutils align-default">
+<colgroup>
+<col style="width: 10%" />
+<col style="width: 90%" />
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.graph.Lattice.adjacency_list" title="netket.graph.Lattice.adjacency_list"><code class="xref py py-obj docutils literal notranslate"><span class="pre">adjacency_list</span></code></a></p></td>
+<td><p>The adjacency list of the graph where each node is represented by an integer in <cite>[0, n_sites)</cite>.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.graph.Lattice.automorphisms" title="netket.graph.Lattice.automorphisms"><code class="xref py py-obj docutils literal notranslate"><span class="pre">automorphisms</span></code></a></p></td>
+<td><p>The automorphisms of the graph, including translation symmetries only.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.graph.Lattice.basis_vectors" title="netket.graph.Lattice.basis_vectors"><code class="xref py py-obj docutils literal notranslate"><span class="pre">basis_vectors</span></code></a></p></td>
+<td><p>The basis vectors of the lattice.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.graph.Lattice.coordinates" title="netket.graph.Lattice.coordinates"><code class="xref py py-obj docutils literal notranslate"><span class="pre">coordinates</span></code></a></p></td>
+<td><p>The coordinates of the atoms in the lattice.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.graph.Lattice.distances" title="netket.graph.Lattice.distances"><code class="xref py py-obj docutils literal notranslate"><span class="pre">distances</span></code></a></p></td>
+<td><p>The distances between the nodes.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.graph.Lattice.edges" title="netket.graph.Lattice.edges"><code class="xref py py-obj docutils literal notranslate"><span class="pre">edges</span></code></a></p></td>
+<td><p>The graph edges.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.graph.Lattice.is_bipartite" title="netket.graph.Lattice.is_bipartite"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_bipartite</span></code></a></p></td>
+<td><p>Whether the graph is bipartite.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.graph.Lattice.is_connected" title="netket.graph.Lattice.is_connected"><code class="xref py py-obj docutils literal notranslate"><span class="pre">is_connected</span></code></a></p></td>
+<td><p>Whether the graph is connected.</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference internal" href="#netket.graph.Lattice.n_dim" title="netket.graph.Lattice.n_dim"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_dim</span></code></a></p></td>
+<td><p>The dimension of the lattice.</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference internal" href="#netket.graph.Lattice.n_sites" title="netket.graph.Lattice.n_sites"><code class="xref py py-obj docutils literal notranslate"><span class="pre">n_sites</span></code></a></p></td>
+<td><p>The number of vertices in the graph.</p></td>
+</tr>
+</tbody>
+</table>
+<dl class="method">
+<dt id="netket.graph.Lattice.adjacency_list">
+<em class="property">property </em><code class="sig-name descname">adjacency_list</code><a class="headerlink" href="#netket.graph.Lattice.adjacency_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>The adjacency list of the graph where each node is
+represented by an integer in <cite>[0, n_sites)</cite>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.atom_label">
+<code class="sig-name descname">atom_label</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.graph.Lattice</em>, <em class="sig-param">site: int</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#netket.graph.Lattice.atom_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function returning the atom label indicating which of the unit cell atoms is located at a given a site index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>site</strong> – The site index.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.automorphisms">
+<em class="property">property </em><code class="sig-name descname">automorphisms</code><a class="headerlink" href="#netket.graph.Lattice.automorphisms" title="Permalink to this definition">¶</a></dt>
+<dd><p>The automorphisms of the graph,
+including translation symmetries only.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.basis_vectors">
+<em class="property">property </em><code class="sig-name descname">basis_vectors</code><a class="headerlink" href="#netket.graph.Lattice.basis_vectors" title="Permalink to this definition">¶</a></dt>
+<dd><p>The basis vectors of the lattice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.coordinates">
+<em class="property">property </em><code class="sig-name descname">coordinates</code><a class="headerlink" href="#netket.graph.Lattice.coordinates" title="Permalink to this definition">¶</a></dt>
+<dd><p>The coordinates of the atoms in the lattice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.distances">
+<em class="property">property </em><code class="sig-name descname">distances</code><a class="headerlink" href="#netket.graph.Lattice.distances" title="Permalink to this definition">¶</a></dt>
+<dd><p>The distances between the nodes. The fact that some node
+may not be reachable from another is represented by -1.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list[list]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.edges">
+<em class="property">property </em><code class="sig-name descname">edges</code><a class="headerlink" href="#netket.graph.Lattice.edges" title="Permalink to this definition">¶</a></dt>
+<dd><p>The graph edges.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.is_bipartite">
+<em class="property">property </em><code class="sig-name descname">is_bipartite</code><a class="headerlink" href="#netket.graph.Lattice.is_bipartite" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the graph is bipartite.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.is_connected">
+<em class="property">property </em><code class="sig-name descname">is_connected</code><a class="headerlink" href="#netket.graph.Lattice.is_connected" title="Permalink to this definition">¶</a></dt>
+<dd><p>Whether the graph is connected.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.n_dim">
+<em class="property">property </em><code class="sig-name descname">n_dim</code><a class="headerlink" href="#netket.graph.Lattice.n_dim" title="Permalink to this definition">¶</a></dt>
+<dd><p>The dimension of the lattice.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.n_sites">
+<em class="property">property </em><code class="sig-name descname">n_sites</code><a class="headerlink" href="#netket.graph.Lattice.n_sites" title="Permalink to this definition">¶</a></dt>
+<dd><p>The number of vertices in the graph.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.site_to_coord">
+<code class="sig-name descname">site_to_coord</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.graph.Lattice</em>, <em class="sig-param">site: int</em><span class="sig-paren">)</span> &#x2192; List[float]<a class="headerlink" href="#netket.graph.Lattice.site_to_coord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function returning the coordinates of a given site index.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Args:</dt><dd><p>site: The site index.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.site_to_vector">
+<code class="sig-name descname">site_to_vector</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.graph.Lattice</em>, <em class="sig-param">site: int</em><span class="sig-paren">)</span> &#x2192; List[int]<a class="headerlink" href="#netket.graph.Lattice.site_to_vector" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function returning the site vector corresponding to a given site index.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>site</strong> – The site index.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>Constructs a square 2X2 lattice without periodic boundary conditions and prints the site vectors corresponding to given site indices.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">netket</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">g</span><span class="o">=</span><span class="n">netket</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">Lattice</span><span class="p">(</span><span class="n">basis_vectors</span><span class="o">=</span><span class="p">[[</span><span class="mf">1.</span><span class="p">,</span><span class="mf">0.</span><span class="p">],[</span><span class="mf">0.</span><span class="p">,</span><span class="mf">1.</span><span class="p">]],</span> <span class="n">extent</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="n">pbc</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">])</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">g</span><span class="o">.</span><span class="n">site_to_vector</span><span class="p">(</span><span class="mi">0</span><span class="p">))))</span>
+<span class="go">[0, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">g</span><span class="o">.</span><span class="n">site_to_vector</span><span class="p">(</span><span class="mi">1</span><span class="p">))))</span>
+<span class="go">[0, 1]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">g</span><span class="o">.</span><span class="n">site_to_vector</span><span class="p">(</span><span class="mi">2</span><span class="p">))))</span>
+<span class="go">[1, 0]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="nb">int</span><span class="p">,</span><span class="n">g</span><span class="o">.</span><span class="n">site_to_vector</span><span class="p">(</span><span class="mi">3</span><span class="p">))))</span>
+<span class="go">[1, 1]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.vector_to_coord">
+<code class="sig-name descname">vector_to_coord</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.graph.Lattice, site_vector: List[int], atom_label: int</em><span class="sig-paren">)</span> &#x2192; List[float]<a class="headerlink" href="#netket.graph.Lattice.vector_to_coord" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function returning the coordinates of a given atom characterized by a
+given site vector.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Args:</dt><dd><p>site_vector: The site vector.
+atom_label: Which of the atoms in the unit cell.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+<dl class="method">
+<dt id="netket.graph.Lattice.vector_to_site">
+<code class="sig-name descname">vector_to_site</code><span class="sig-paren">(</span><em class="sig-param">self: netket._C_netket.graph.Lattice, site_vector: List[int]</em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#netket.graph.Lattice.vector_to_site" title="Permalink to this definition">¶</a></dt>
+<dd><p>Member function returning the site index corresponding to a given site vector.</p>
+<blockquote>
+<div><dl class="simple">
+<dt>Args:</dt><dd><p>site_vector: The site vector.</p>
+</dd>
+</dl>
+</div></blockquote>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+    </div>
+      
+  </div>
+</div>
+<footer class="footer">
+  <div class="container">
+    <p class="pull-right">
+      <a href="#">Back to top</a>
+      
+    </p>
+    <p>
+        &copy; Copyright 2019, The Simons Foundation, Inc. - All rights reserved.<br/>
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 2.2.1.<br/>
+    </p>
+  </div>
+</footer>
+  </body>
+</html>
